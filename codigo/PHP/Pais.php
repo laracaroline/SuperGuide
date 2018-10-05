@@ -1,23 +1,23 @@
 <?php
 class Pais{
-	private $id_pais;
-	private $nome_pais;
+	private $id;
+	private $nome;
 	
-	public function __construct($id_pais,$nome_pais){
-		$this->id_pais = $id_pais;
-		$this->nome_pais = $nome_pais;
+	public function __construct($id,$nome){
+		$this->id = $id;
+		$this->nome = $nome;
 	}
-	public function getIdPais(){
-		return $this->id_pais;
+	public function getId(){
+		return $this->id;
 	}
-	public function getNomePais(){
-		return $this->nome_pais;
+	public function getNome(){
+		return $this->nome;
 	}
-	public function setIdPais($id_pais){
-		$this->id_pais = $id_pais;
+	public function setId($id){
+		$this->id = $id;
 	}
-	public function setNomePais($nome_pais){
-		$this->nome_pais = $nome_pais;
+	public function setNome($nome){
+		$this->nome = $nome;
 	}
 }
 ?>
