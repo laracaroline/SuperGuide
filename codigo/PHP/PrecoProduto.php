@@ -1,31 +1,31 @@
 <?php
-class Preco_produto{
+class PrecoProduto(){
 	private $id_produto;
 	private $id_supermercado;
-	private $preco_produto;
+	private $preco;
 	
-	public function __construct($id_produto, $id_supermercado, $preco_produto){
-		$this->id_produto = $id_produto;
+	public function __construct($id, $id_supermercado, $preco){
+		$this->id = $id;
 		$this->id_supermercado = $id_supermercado;
-		$this->preco_produto = $preco_produto;
+		$this->preco = $preco;
 	}
 	public function getIdProduto(){
-		return $this->id_produto;
+		return $this->id;
 	}
 	public function getIdSupermercado(){
 		return $this->id_supermercado;
 	}
 	public function getPrecoProduto(){
-		return $this->preco_produto;
+		return $this->preco;
 	}
-	public function setIdProduto($id_produto){
+	public function setIdProduto($id){
 		$this->id_produto = $id_produto;
 	}
 	public function setIdSupermercado($id_supermercado){
 		$this->id_supermercado = $id_supermercado;
 	}
-	public function setPrecoProduto($preco_produto){
-		$this->preco_produto = $preco_produto;
+	public function setPreco($preco){
+		$this->preco = $preco;
 	}
 }
 ?>

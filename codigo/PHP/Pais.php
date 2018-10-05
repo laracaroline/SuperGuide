@@ -1,6 +1,6 @@
 <?php
-class Pais{
-	private $id;
+class Pais(){
+	private $id = null;
 	private $nome;
 	
 	public function __construct($id,$nome){

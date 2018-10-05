@@ -7,15 +7,17 @@ class Supermercado(){
 	private $telefone;
 	private $email;
 	private $senha;
+	private $foto;
 	private $id_cidade;
 		
-	public function __construct($nome, $cnpj, $endereco, $telefone, $email, $senha, $id_cidade){
+	public function __construct($nome, $cnpj, $endereco, $telefone, $email, $senha, $foto, $id_cidade){
 		$this->nome = $nome;
 		$this->cnpj = $cnpj;
 		$this->endereco = $endereco;
 		$this->telefone = $telefone;
 		$this->email = $email;
 		$this->senha = $senha;
+		$this->foto = $foto;
 		$this->cidade = $id_cidade;
 	}
 		
@@ -45,6 +47,10 @@ class Supermercado(){
 		
 	public function getSenha(){
 		return $this->senha;
+	}
+	
+	public function getFoto(){
+		return $this->foto;
 	}
 		
 	public function getIdCidade(){
@@ -77,6 +83,10 @@ class Supermercado(){
 	
 	public function setSenha($senha){
 		$this->senha = $senha
+	}
+	
+	public function setFoto($foto){
+		$this->foto = $foto;
 	}
 		
 	public function setIdCidade($id_cidade){

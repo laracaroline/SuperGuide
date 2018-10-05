@@ -1,16 +1,18 @@
 <?php
-class Produto{
+class Produto(){
 	private $id = null;
 	private $nome;
 	private $descricao;
 	private $marca;
 	private $categoria;
+	private $foto;
 	
-	public function __construct($nome, $descricao, $marca, $categoria){
+	public function __construct($nome, $descricao, $marca, $categoria, $foto){
 		$this->nome = $nome;
 		$this->descricao = $descricao;
 		$this->marca = $marca;
 		$this->categoria = $categoria;
+		$this->foto = $foto;
 	}
 	
 	public function getId(){
@@ -33,6 +35,10 @@ class Produto{
 		return $this->categoria;
 	}
 	
+	public function getFoto(){
+		return $this->foto;
+	}
+	
 	public function setId($id){
 		$this->id = $id;
 	}
@@ -51,6 +57,10 @@ class Produto{
 	
 	public function setCategoria($categoria){
 		$this->categoria = $categoria;
+	}
+	
+	public function setFoto($foto){
+		$this->foto = $foto;
 	}
 }
 ?>
