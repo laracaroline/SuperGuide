@@ -1,6 +1,6 @@
 <?php
-class Cidade{
-	private $id;
+class Cidade(){
+	private $id = null;
 	private $nome;
 	private $id_estado;
 	
