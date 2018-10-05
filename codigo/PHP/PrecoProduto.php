@@ -28,6 +28,4 @@ class Preco_produto{
 		$this->preco_produto = $preco_produto;
 	}
 }
-
-//id_produto id_supermercado preco_produto
 ?>
