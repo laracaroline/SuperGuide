@@ -2,7 +2,7 @@ INSERT INTO marcas (NOME_MARCA) VALUES ('Saborelle'), ('Cisne'), ('Cristal'), ('
 INSERT INTO categorias (NOME_CATEGORIA, DESCRICAO_CATEGORIA) VALUES ('Limpeza', 'Produtos destinados a limpeza'), ('Bebidas', 'As birita'), ('Hortaliças', 'Vegano pira'), ('Grãos', ''), ('Hortifruti', ''), ('Industrializados', ''), ('Guloseimas', ''), ('Carnes', ''), ('Cereais', ''), ('Frios', ''), ('Congelados', ''), ('Higiene Pessoal', ''), ('Temperos', ''),('Massas', '');
 INSERT INTO produtos (NOME_PRODUTO, DESCRICAO_PRODUTO, ID_MARCA, ID_CATEGORIA) VALUES ('Arroz','Arroz Integral',7,4), ('Feijão','Feijão carioca',7,4),('Suco','Suco em pó sabor de laranja',1,6),('Frango','Filé de peito', 11,11),('Carne bovina', 'Contra-filé',12,8),('Carne bovina','Picanha',12,8), ('Macarrão','Macarrão penne',1,14),('Sal','Sal refinado',2,13),('Refrigerante','Refrigerante sabor guaraná',9,2);
 INSERT INTO paises (NOME_PAIS) VALUES ('Brasil'),('EUA');
-INSERT INTO estados (NOME_ESTADOS,ID_PAIS) VALUES ('Goiás',1),('Minas Gerais',1);
+INSERT INTO estados (NOME_ESTADO,ID_PAIS) VALUES ('Goiás',1),('Minas Gerais',1);
 INSERT INTO cidades (NOME_CIDADE,ID_ESTADO) VALUES ('Ceres',1), ('Rialma',1), ('Rubiataba',1);
 INSERT INTO clientes (NOME_CLIENTE, CPF_CLIENTE, TELEFONE_CLIENTE, EMAIL_CLIENTE, SENHA_CLIENTE, DATA_NASC_CLIENTE, ID_CIDADE) VALUES ('admin','123.456.789-10','+5562987654321','admin@email.com','admin','2018-01-01',1);
 INSERT INTO supermercados (NOME_SUPERMERCADO, CNPJ_SUPERMERCADO, ENDERECO_SUPERMERCADO, TELEFONE_SUPERMERCADO, EMAIL_SUPERMERCADO, SENHA_SUPERMERCADO, ID_CIDADE) VALUES ('SuperGuide', '9876543210123456789','Ceres - GO, 76300-000','(62)3210-1234','email@superguide.com','123456789',1);
