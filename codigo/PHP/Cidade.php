@@ -4,7 +4,7 @@ class Cidade{
 	private $nome;
 	private $id_estado;
 
-	public function __construct($nome,$id_estado){
+	public function __construct($nome, $id_estado){
 		$this->nome = $nome;
 		$this->id_estado = $id_estado;
 	}
