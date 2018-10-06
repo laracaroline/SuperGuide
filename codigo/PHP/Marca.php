@@ -1,5 +1,5 @@
 <?php
-class Marca(){
+class Marca{
 	private $id = null;
 	private $nome;
 	private $descricao;
@@ -26,11 +26,11 @@ class Marca(){
 	}
 	
 	public function setNome($nome){
-		$this->nome = $nome;
+		$this-> = $nome;
 	}
 	
 	public function setDescricao($descricao){
-		$this->descricao = $descricao;
+		$this-> = $descricao;
 	}
 }
 ?>

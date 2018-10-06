@@ -1,10 +1,9 @@
 <?php
-class Pais(){
+class Pais{
 	private $id = null;
 	private $nome;
-	
-	public function __construct($id,$nome){
-		$this->id = $id;
+
+	public function __construct($nome){
 		$this->nome = $nome;
 	}
 	public function getId(){

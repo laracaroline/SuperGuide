@@ -1,11 +1,10 @@
 <?php
-class Cidade(){
+class Cidade{
 	private $id = null;
 	private $nome;
 	private $id_estado;
-	
-	public function __construct($id,$nome,$id_estado){
-		$this->id = $id;
+
+	public function __construct($nome,$id_estado){
 		$this->nome = $nome;
 		$this->id_estado = $id_estado;
 	}
