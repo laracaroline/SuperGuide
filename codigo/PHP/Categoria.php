@@ -3,12 +3,11 @@ class Categoria(){
 	private $id = null;
 	private $nome;
 	private $descricao;
-	private $foto;
+	//Campo BLOB verificar como fazer
 	
-	public function __construct($nome, $descricao, $foto){
+	public function __construct($nome, $descricao){
 		$this->nome = $nome;
 		$this->descricao = $descricao;
-		$this->foto = $foto;
 	}
 
 	public function getId(){
@@ -23,24 +22,16 @@ class Categoria(){
 		return $this->descricao;
 	}
 	
-	public function getFoto(){
-		return $this->foto;
-	}
-	
 	public function setId($id){
 		$this->id = $id;
 	}
 	
 	public function setNome($nome){
-		$this->nome = $nome;
+		$this-> = $nome;
 	}
 	
 	public function setDescricao($descricao){
-		$this->descricao = $descricao;
-	}
-	
-	public function setFoto($foto){
-		$this->foto = $foto;
+		$this-> = $descricao;
 	}
 }
 ?>

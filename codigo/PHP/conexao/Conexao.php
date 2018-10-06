@@ -11,7 +11,7 @@ class Conexao{
     public static function getInstancia() {
         if (!isset(self::$instancia)) {
             try {
-                $servidor = "mysql:host=localhost;dbname=superguide";
+                $servidor = "mysql:host=localhost;dbname=mydb";
                 $usuario = "root";
                 $senha = "";
 
