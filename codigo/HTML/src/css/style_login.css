@@ -1,0 +1,125 @@
+body{
+	background-color: #E6E6E6;
+	margin: 0px;
+	
+}
+
+.container{
+	background-color: #E6E6E6;
+	
+
+	display: flex;
+	justify-content: center;
+	padding: 100px 100px 0px 100px;
+}
+
+.menu1{
+	height: 40vh;
+	width: 40vw;
+	
+	background-color: #808080;
+	
+	
+	flex-direction: collumn;
+	display: flex;
+	
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	
+	justify-content: center;
+	align-items: center;	
+		
+	font-family: Montserrat, Regular;
+	color: white
+	
+	
+}
+
+.menu2{
+	height: 40vh;
+	width: 40vw;
+	
+	background-color: white;
+	
+	flex-direction: collumn;
+	display: flex;
+	
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat, Regular;
+
+}
+
+.menu1 h2{
+	text-align: center;
+	font-family: Montserrat;
+	color: white
+}
+
+.menu1 input[type=submit]{
+	text-align: center;
+	font-family: Montserrat;
+	border-radius: 6px;
+}
+
+.menu2 input[type=submit]{
+	text-align: center;
+	font-family: Montserrat;
+	justify-content: center;
+	border-radius: 6px;
+}
+
+.menu2 h2{
+	text-align: center;
+	font-family: Montserrat;
+}
+.cont1{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	
+}
+.cont2{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.campo{
+	
+	border-radius: 8px;
+	
+	height: 30px;
+	
+	padding: 5px;
+	
+	border:none;
+	background-color: #D3D3D3;
+}
+
+.ir_cadastro{
+	display: flex;
+	flex-direction: collumn;
+	width: 100%;
+	background-color: #E6E6E6;
+	justify-content: center;
+	padding: 15px;
+}
+
+.ir_cadastro a{
+	text-decoration: none;
+	color: #808080;
+	font-family: Montserrat;
+}
+
+.ir_cadastro a:hover{
+	color: orange;
+}
+
+
+
+
+
