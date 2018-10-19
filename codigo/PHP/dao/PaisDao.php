@@ -14,7 +14,7 @@
       }
 
       public function create($pais){
-		      $id = $this->getNovoIdPais(); //classe que gera um id
+		  $id = $this->getNovoIdPais(); //classe que gera um id
           $nome = $pais->getNome(); // classe do Pais.php que pega o nome
 
           $sqlStmt = "INSERT INTO {$this->tabela} (id_pais, nome_pais) VALUES (:id, :nome)";
@@ -49,11 +49,11 @@
             $getRow = $operacao->fetch(PDO::FETCH_OBJ);
             $nome = $getRow->nome_pais;
             $objeto = new Pais($nome);
-
             $objeto->setId($id);
             return $objeto;
          } catch(PDOException $excecao){
             echo $excecao->getMessage();
+			//echo "erro";
          }
       }
 

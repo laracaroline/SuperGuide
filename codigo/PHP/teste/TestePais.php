@@ -9,11 +9,12 @@
 
   //$paisDao->create($pais);
 
-  //$lerContato = $paisDao->read(1); -- NAO FUNCIONOU
+	$lerContato = $paisDao->read(1);
+	echo $lerContato->getNome();
 
   //$pais->setNome("Canada");
 
   //$paisDao->update($pais);
 
-  $paisDao->delete(1);
+  //$paisDao->delete(5);
 ?>
