@@ -7,5 +7,13 @@
 
   $paisDao = new PaisDao();
 
-  $paisDao->create($pais);
+  //$paisDao->create($pais);
+
+  //$lerContato = $paisDao->read(1); -- NAO FUNCIONOU
+
+  //$pais->setNome("Canada");
+
+  //$paisDao->update($pais);
+
+  $paisDao->delete(1);
 ?>
