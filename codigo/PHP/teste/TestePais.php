@@ -9,8 +9,8 @@
 
   //$paisDao->create($pais);
 
-	$lerContato = $paisDao->read(1);
-	echo $lerContato->getNome();
+  //$lerContato = $paisDao->read(1);
+  //echo $lerContato->getNome();
 
   //$pais->setNome("Canada");
 
