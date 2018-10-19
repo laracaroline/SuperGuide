@@ -1,13 +1,12 @@
 <?php
-class Estado(){
+class Estado {
 	private $id = null;
 	private $nome;
-	private $id_pais;
-	
-	public function __construct($nome,$id_pais){
-		$this->id = $id;
+	private $pais;
+
+	public function __construct($nome, $pais){
 		$this->nome = $nome;
-		$this->id_pais = $id_pais;
+		$this->pais = $pais;
 	}
 	public function getId(){
 		return $this->id;
@@ -15,8 +14,8 @@ class Estado(){
 	public function getNome(){
 		return $this->nome;
 	}
-	public function getIdPais(){
-		return $this->id_pais;
+	public function getPais(){
+		return $this->pais;
 	}
 	public function setId($id){
 		$this->id = $id;
@@ -24,8 +23,8 @@ class Estado(){
 	public function setNome($nome){
 		$this->nome = $nome;
 	}
-	public function setIdPais($id_pais){
-		$this->id_pais = $id_pais;
+	public function setPais($pais){
+		$this->id_pais = $pais;
 	}
 }
 ?>
