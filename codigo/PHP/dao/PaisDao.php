@@ -59,7 +59,6 @@
       public function update($pais) {
        $id = $pais->getId();
        $nome = $pais->getNome();
-
        $sqlStmt = "UPDATE {$this->tabela} SET nome_pais=:nome WHERE id_pais=:id";
        try {
           $operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
