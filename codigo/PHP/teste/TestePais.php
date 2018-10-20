@@ -12,9 +12,10 @@
   //$lerContato = $paisDao->read(1);
   //echo $lerContato->getNome();
 
-  //$pais->setNome("Canada");
+  $pais->setNome("Canada");
+  //echo $pais->getNome();
 
-  //$paisDao->update($pais);
+  $paisDao->update($pais);
 
   //$paisDao->delete(5);
 ?>

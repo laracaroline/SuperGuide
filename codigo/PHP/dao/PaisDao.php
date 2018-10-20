@@ -1,5 +1,4 @@
 <?php
-
   require_once "BaseCrudDao.php";
   require_once "../conexao/Conexao.php";
 
@@ -66,7 +65,6 @@
           $operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
           $operacao->bindValue(":id", $id, PDO::PARAM_INT);
           $operacao->bindValue(":nome", $nome, PDO::PARAM_STR);
-
           if($operacao->execute()){
              if($operacao->rowCount() > 0){
                 return true;
@@ -78,6 +76,7 @@
           }
        } catch (PDOException $excecao)  {
           echo $excecao->getMessage();
+		  echo "erro";
        }
     }
 
