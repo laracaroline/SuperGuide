@@ -7,15 +7,18 @@
 
   $paisDao = new PaisDao();
 
-  //$paisDao->create($pais);
+  $paisDao->create($pais);
 
-  //$lerContato = $paisDao->read(1);
-  //echo $lerContato->getNome();
+  $lerContato = $paisDao->read(2);
+  echo $lerContato->getNome();
+  echo $lerContato->getId();
+  
+  $lerContato->setNome("Canada");
 
-  $pais->setNome("Canada");
+  //$pais->setNome("Canada");
   //echo $pais->getNome();
 
-  $paisDao->update($pais);
+  $paisDao->update($lerContato);
 
   //$paisDao->delete(5);
 ?>
