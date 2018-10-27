@@ -12,7 +12,7 @@
         }
 
         public function create($objeto) {
-            $id = $this->getNovoId();
+            $id = $this->getNovoIdEstado();
             $nome = $objeto->getNome();
             $pais = $objeto->getPais();
             $idPais = $pais->getId();
@@ -61,7 +61,7 @@
 		public function update($estado){
 			$id = $estado->getId();
 			$nome = $estado->getNome();
-		
+
 			$sqlStmt = "UPDATE {$this->tabela} SET nome_estado=:nome WHERE id_pais=:id";
 			try {
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
@@ -82,7 +82,7 @@
 				echo "erro";
 			}
 		}
-    
+
 
         public function delete($id_estado) {
         $sqlStmt = "DELETE FROM {$this->tabela} WHERE id_estado=:id";
@@ -104,7 +104,7 @@
        }
     }
 
-        private function getNovoId() {
+        private function getNovoIdEstado() {
             $sql = "SELECT MAX(id_estado) AS id_estado FROM {$this->tabela}";
             try {
                 $operacao = $this->instanciaConexaoPdo->prepare($sql);
