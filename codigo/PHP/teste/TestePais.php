@@ -9,16 +9,16 @@
 
   $paisDao->create($pais);
 
-  $lerContato = $paisDao->read(2);
-  echo $lerContato->getNome();
-  echo $lerContato->getId();
+  //$lerContato = $paisDao->read(2);
+  //echo $lerContato->getNome();
+  //echo $lerContato->getId();
   
-  $lerContato->setNome("Canada");
+  //$lerContato->setNome("Canada");
 
   //$pais->setNome("Canada");
   //echo $pais->getNome();
 
-  $paisDao->update($lerContato);
+  //$paisDao->update($lerContato);
 
   //$paisDao->delete(5);
 ?>

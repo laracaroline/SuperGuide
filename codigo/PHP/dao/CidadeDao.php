@@ -81,12 +81,42 @@
 			$sqlStmt = "DELETE FROM {$this->tabela} WHERE id_cidade=:id";
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
-				$operacao->bindValue
+				$operacao->bindValue(":id", $id, PDO_INT);
+				if($operacao->execute()){
+					if($operacao->rowCount() > 0){
+						return true;
+					}else{
+						return false
+					}
+				}else{
+					return false;
+				}
+			}catch (PDOException $exececao){
+				echo $excecao->getMessage;
+				echo "erro";
 			}
 		}
 		
-		
-		
-		
+		private function getNovoIdCidade(){
+			$sql = "SELECT MAX(id_cidade) AS id_cidade FROM {$this->tabela}";
+			try{
+				$operacao = $this->instanciaConexaoPdo->prepare($sql);
+				if($operacao->execute()){
+					if($operacao->rowCount() > 0){
+						$getRow = $operacao->fetch(PDO::FETCH_OBJ);
+						$idReturn = (int) $getRow->id_cidade + 1;
+						return $idReturn;
+					}else{
+						throw new Exception("Ocorreu um problema com o banco de dados");
+						exit();
+					}
+				}else{
+					throw new Exception("Ocorreu um problema com o banco de dados");
+					exit();
+				}
+			}catch (PDOException $excecao){
+				echo $excecao->getMessage();
+			}
+		}
 	}
 ?>
