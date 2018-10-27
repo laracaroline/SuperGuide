@@ -70,7 +70,7 @@
     }
 
         public function delete($id_estado) {
-        $sqlStmt = "DELETE FROM {$this->tabela} WHERE ID_ESTADO=:id";
+        $sqlStmt = "DELETE FROM {$this->tabela} WHERE id_estado=:id";
        try {
           $operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
           $operacao->bindValue(":id", $id_estado, PDO::PARAM_INT);

@@ -3,7 +3,6 @@
 	require_once "../conexao/Conexao.php";
   
 	class CidadeDao implements BaseCrudDao{
-		
 		private $instanciaConexaoPdo;
 		private $tabela;
 		
@@ -14,18 +13,21 @@
 		
 		public function create($cidade){
 			$id = $this->getNovoIdCidade();
-			$nome = $this->getNome();
+			$nome = $cidade->getNome();
+			$estado = $cidade->getIdEstado();
+			$id_estado = $estado->getId();
 			
-			$sqlStmt = "INSERT INTO {$this->tabela} (id_cidade, nome_cidade) VALUES (:id, :nome)";
+			$sqlStmt = "INSERT INTO {$this->tabela} (id_cidade, nome_cidade, id_estado) VALUES (:id, :nome, :id_estado)";
 			
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
 				$operacao->bindValue(":nome", $nome, PDO::PARAM_STR);
+				$operacao->bindValue(":id_estado", $id_estado, PDO::PARAM_INT);
 				
 				if($operacao->execute()){
 					if($operacao->rowCount() > 0){
-						$pais->setId($id);
+						$cidade->setId($id);
 						return true;
 					}else{
 						return false;
@@ -46,7 +48,8 @@
 				$operacao->execute();
 				$getRow = $operacao->fetch(PDO::FETCH_OBJ);
 				$nome = $getRow->nome_cidade;
-				$objeto = new Cidade($nome);
+				$id_estado = $getRow->id_estado;
+				$objeto = new Cidade($nome, $id_estado);
 				$objeto->setId($id);
 				return $objeto;
 			}catch(PDOException $excecao){
@@ -54,9 +57,10 @@
 			}
 		}
 		
-		public function update($id){
+		public function update($cidade){
 			$id = $cidade->getId();
 			$nome = $cidade->getNome();
+			$estado = $cidade->getIdEstado();
 			$sqlStmt = "UPDATE {$this->tabela} SET nome_cidade=:nome WHERE id_cidade=:id";
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
@@ -81,18 +85,18 @@
 			$sqlStmt = "DELETE FROM {$this->tabela} WHERE id_cidade=:id";
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
-				$operacao->bindValue(":id", $id, PDO_INT);
+				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
 				if($operacao->execute()){
 					if($operacao->rowCount() > 0){
 						return true;
 					}else{
-						return false
+						return false;
 					}
 				}else{
 					return false;
 				}
-			}catch (PDOException $exececao){
-				echo $excecao->getMessage;
+			}catch (PDOException $excecao){
+				echo $excecao->getMessage();
 				echo "erro";
 			}
 		}
