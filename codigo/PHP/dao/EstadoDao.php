@@ -36,13 +36,26 @@
                     return false;
                 }
             } catch (PDOException $excecao) {
-                echo "Erro";
                 echo $excecao->getMessage();
+				echo "Erro";
             }
         }
 
         public function read($id) {
-            echo "ler estado";
+			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_estado=:id";
+			try{
+				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
+				$operacao->execute();
+				$getRow = $operacao->fetch(PDO::FETCH_OBJ);
+				$nome = $getRow->nome_estado;
+				$id_pais = $getRow->id_pais;
+				$objeto = new Estado($nome, $id_pais);
+				$objeto->setId($id);
+				return $objeto;
+			}catch(PDOException $excecao){
+				echo $excecao->getMessage;
+			}
         }
 
         public function update($estado){
@@ -66,6 +79,7 @@
           }
        } catch (PDOException $excecao)  {
           echo $excecao->getMessage();
+		  echo "erro";
        }
     }
 
@@ -85,6 +99,7 @@
           }
        } catch (PDOException $excecao) {
           echo $excecao->getMessage();
+		  echo "erro";
        }
     }
 

@@ -15,7 +15,7 @@
   
   //$lerContato->setNome("Canada");
 
-  //$pais->setNome("Canada");
+  //$lerContato->setNome("Canada");
   //echo $pais->getNome();
 
   //$paisDao->update($lerContato);
