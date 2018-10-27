@@ -52,7 +52,7 @@
             return $objeto;
          } catch(PDOException $excecao){
             echo $excecao->getMessage();
-			//echo "erro";
+			echo "erro";
          }
       }
 
