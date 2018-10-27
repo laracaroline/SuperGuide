@@ -58,30 +58,31 @@
 			}
         }
 
-        public function update($estado){
-       $id = $estado->getId();
-       $nome = $estado->getNome();
+		public function update($estado){
+			$id = $estado->getId();
+			$nome = $estado->getNome();
+		
+			$sqlStmt = "UPDATE {$this->tabela} SET nome_estado=:nome WHERE id_pais=:id";
+			try {
+				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
+				$operacao->bindValue(":nome", $nome, PDO::PARAM_STR);
 
-       $sqlStmt = "UPDATE {$this->tabela} SET nome_estado=:nome WHERE id_pais=:id";
-       try {
-          $operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
-          $operacao->bindValue(":id", $id, PDO::PARAM_INT);
-          $operacao->bindValue(":nome", $nome, PDO::PARAM_STR);
-
-          if($operacao->execute()){
-             if($operacao->rowCount() > 0){
-                return true;
-             } else {
-                return false;
-             }
-          } else {
-             return false;
-          }
-       } catch (PDOException $excecao)  {
-          echo $excecao->getMessage();
-		  echo "erro";
-       }
-    }
+				if($operacao->execute()){
+					if($operacao->rowCount() > 0){
+						return true;
+					} else {
+						return false;
+					}
+				} else {
+					return false;
+				}
+			} catch (PDOException $excecao)  {
+				echo $excecao->getMessage();
+				echo "erro";
+			}
+		}
+    
 
         public function delete($id_estado) {
         $sqlStmt = "DELETE FROM {$this->tabela} WHERE id_estado=:id";
