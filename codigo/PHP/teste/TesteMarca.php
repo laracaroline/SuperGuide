@@ -9,16 +9,16 @@
 	
 	$marcaDao->create($marca);
 	
-	//$lerContato = $marcaDao->read(2);
+	//$lerContato = $marcaDao->read(30);
 	//echo $lerContato->getNome();
 	//echo $lerContato->getDescricao();
 	//echo $lerContato->getId();
 	
 	//$lerContato->setNome("Mabel Premium");
 	
-	//$marca->setNome("Mabel Premium");
+	//$lerContato->setNome("Mabel Premium");
 	//echo $marca->getNome();
 	
 	//$marcaDao->update($lerContato);
-	//$marcaDao->delete(1);
+	//$marcaDao->delete(30);
 ?>

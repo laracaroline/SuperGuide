@@ -1,13 +1,13 @@
 <?php
 	require_once "BaseCrudDao.php";
-	require_once "../conexao/Conexao.php"
+	require_once "../conexao/Conexao.php";
 	
 	class MarcaDao implements BaseCrudDao {
 		private $instanciaConexaoPdo;
 		private $tabela;
 		
 		function __construct(){
-			$this->instanciaConexaoPdo = Conexao::getIntancia();
+			$this->instanciaConexaoPdo = Conexao::getInstancia();
 			$this->tabela = "marcas"; //nome da tabela do banco de dados
 		}
 		
@@ -46,7 +46,8 @@
 				$operacao->execute();
 				$getRow = $operacao->fetch(PDO::FETCH_OBJ);
 				$nome = $getRow->nome_marca;
-				$objeto = new Marca ($nome);
+				$descricao = $getRow->descricao_marca;
+				$objeto = new Marca ($nome, $descricao);
 				$objeto->setId($id);
 				return $objeto;
 			} catch (PDOException $excecao){
@@ -58,11 +59,12 @@
 			$id = $marca->getId();
 			$nome = $marca->getNome();
 			$descricao  = $marca->getDescricao();
-			$sqlStmt = "UPDADE {$this->tabela} SET nome_marca = :nome WHERE id_marca = :id";
+			$sqlStmt = "UPDATE {$this->tabela} SET nome_marca = :nome, descricao_marca = :descricao WHERE id_marca = :id";
 			try {
-				$operacao = $this->instanciaConexaoPdo-prepare($sqlStmt);
+				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
 				$operacao->bindValue(":nome", $nome, PDO::PARAM_STR);
+				$operacao->bindValue(":descricao", $descricao, PDO::PARAM_STR);
 				if($operacao->execute()){
 					if($operacao->rowCount() > 0){
 						return true;
