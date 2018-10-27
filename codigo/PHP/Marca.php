@@ -26,11 +26,11 @@ class Marca{
 	}
 	
 	public function setNome($nome){
-		$this-> = $nome;
+		$this->nome = $nome;
 	}
 	
 	public function setDescricao($descricao){
-		$this-> = $descricao;
+		$this->descricao = $descricao;
 	}
 }
 ?>

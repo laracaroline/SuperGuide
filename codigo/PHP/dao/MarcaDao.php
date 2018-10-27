@@ -1,5 +1,5 @@
 <?php
-	require_once "BaseCrud.php";
+	require_once "BaseCrudDao.php";
 	require_once "../conexao/Conexao.php"
 	
 	class MarcaDao implements BaseCrudDao {
@@ -8,7 +8,7 @@
 		
 		function __construct(){
 			$this->instanciaConexaoPdo = Conexao::getIntancia();
-			$this->tabela = "paises"; //nome da tabela do banco de dados
+			$this->tabela = "marcas"; //nome da tabela do banco de dados
 		}
 		
 		public function create($marca){
@@ -20,9 +20,9 @@
 			
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
-				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
-				$operacao->bindValue(":nome", $nome, PDO::PARAM_INT);
-				$operacao->bindValue(":descricao", $descricao, PDO::PARAM_INT);
+					$operacao->bindValue(":id", $id, PDO::PARAM_INT);
+				$operacao->bindValue(":nome", $nome, PDO::PARAM_STR);
+				$operacao->bindValue(":descricao", $descricao, PDO::PARAM_STR);
 				if($operacao->execute()){
 					if($operacao->rowCount() > 0){
 						$marca->setId($id); // setId() classe do Marca.php que seta um id novo
@@ -100,7 +100,7 @@
 			try {
 				$operacao = $this->instanciaConexaoPdo->prepare($sql);
 				if ($operacao->execute()) {
-					if ($operacao-.rowCount() > 0) {
+					if ($operacao->rowCount() > 0) {
 						$getRow = $operacao->fetch(PDO::FETCH_OBJ);
 						$idReturn = (int) $getRow->id_marca + 1;
 						return $idReturn;
