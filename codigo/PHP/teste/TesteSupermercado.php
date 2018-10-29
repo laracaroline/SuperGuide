@@ -2,12 +2,12 @@
 	require_once "../Supermercado.php";
 	require_once "../dao/SupermercadoDao.php";
 	require_once "../dao/BaseCrudDao.php";
-  require_once "../Cidade.php";
-  require_once "../dao/CidadeDao.php";
-  require_once "../Estado.php";
-  require_once "../dao/EstadoDao.php";
-  require_once "../Pais.php";
-  require_once "../dao/PaisDao.php";
+	require_once "../Cidade.php";
+	require_once "../dao/CidadeDao.php";
+	require_once "../Estado.php";
+	require_once "../dao/EstadoDao.php";
+	require_once "../Pais.php";
+	require_once "../dao/PaisDao.php";
 
   //Cria CEP
   $pais1 = new Pais("Pais");
