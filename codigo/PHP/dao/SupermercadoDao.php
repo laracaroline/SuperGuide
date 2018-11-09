@@ -20,7 +20,7 @@
             $email = $objeto->getEmail();
             $senha = $objeto->getSenha();
             //$foto = $objeto->getFoto();//nao testado(BLOB)
-            $cidade = $objeto->getIdCidade();
+            $cidade = $objeto->getCidade();
             $idCidade = $cidade->getId();//getId();
 
             $sql = "INSERT INTO {$this->tabela} (id_supermercado, nome_supermercado, cnpj_supermercado, endereco_supermercado, telefone_supermercado, email_supermercado, senha_supermercado, id_cidade) VALUES (:id, :nome, :cnpj, :endereco, :telefone, :email, :senha, :id_cidade)";
@@ -54,29 +54,29 @@
             }
         }
 
-        public function read($id) {
-			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_supermercado=:id";
-			try{
-				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
-				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
-				$operacao->execute();
-				$getRow = $operacao->fetch(PDO::FETCH_OBJ);
-				$nome = $getRow->nome_supermercado;
-        $cnpj = $getRow->cnpj_supermercado;
-        $endereco = $getRow->endereco_supermercado;
-        $telefone = $getRow->telefone_supermercado;
-        $email = $getRow->email_supermercado;
-        $senha = $getRow->senha_supermercado;
-        //$foto = $getRow->foto_supermercado;//Nao testado(BLOB)
-        $id_cidade = $getRow->id_cidade;
+      public function read($id) {
+    			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_supermercado=:id";
+    			try{
+      				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+      				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
+      				$operacao->execute();
+      				$getRow = $operacao->fetch(PDO::FETCH_OBJ);
+      				$nome = $getRow->nome_supermercado;
+              $cnpj = $getRow->cnpj_supermercado;
+              $endereco = $getRow->endereco_supermercado;
+              $telefone = $getRow->telefone_supermercado;
+              $email = $getRow->email_supermercado;
+              $senha = $getRow->senha_supermercado;
+              //$foto = $getRow->foto_supermercado;//Nao testado(BLOB)
+              $id_cidade = $getRow->id_cidade;
 
-        $objeto = new Supermercado($nome, $cnpj, $endereco, $telefone, $email, $senha, $id_cidade);
-        //$objeto = new Supermercado($nome, $cnpj, $endereco, $telefone, $email, $senha, $foto, $id_cidade);;//Nao testado(BLOB)
-				$objeto->setId($id);
-				return $objeto;
-			}catch(PDOException $excecao){
-				echo $excecao->getMessage;
-			}
+              $objeto = new Supermercado($nome, $cnpj, $endereco, $telefone, $email, $senha, $id_cidade);
+              //$objeto = new Supermercado($nome, $cnpj, $endereco, $telefone, $email, $senha, $foto, $id_cidade);;//Nao testado(BLOB)
+      				$objeto->setId($id);
+      				return $objeto;
+      			}catch(PDOException $excecao){
+      				echo $excecao->getMessage;
+      			}
         }
 
 		public function update($supermercado){
@@ -88,19 +88,16 @@
       $email = $supermercado->getEmail();
       $senha = $supermercado->getSenha();
       //$foto = $supermercado->getFoto(); //nao testado(BLOB)
-      $cidade = $supermercado->getIdCidade();
+      $cidade = $supermercado->getCidade();
       $idCidade = $cidade->getId();
-
-
 		  //$sqlStmt = "UPDATE {$this->tabela} SET nome_supermercado = :nome, cnpj_supermercado = :cnpj, endereco_supermercado = :endereco, telefone_supermercado = :telefone, email_supermercado = :email_supermercado, senha_supermercado = :senha, foto_supermercado = :foto, id_cidade = :id_cidade WHERE id_supermercado=:id"; //nao testado(BLOB)
-      $sqlStmt = "UPDATE {$this->tabela} SET nome_supermercado = :nome, cnpj_supermercado = :cnpj, endereco_supermercado = :endereco, telefone_supermercado = :telefone, email_supermercado = :email_supermercado, senha_supermercado = :senha, foto_supermercado = :foto, id_cidade = :id_cidade WHERE id_supermercado=:id";
-
-
+      $sqlStmt = "UPDATE {$this->tabela} SET nome_supermercado = :nome, cnpj_supermercado = :cnpj, endereco_supermercado = :endereco, telefone_supermercado = :telefone, email_supermercado = :email, senha_supermercado = :senha, id_cidade = :id_cidade WHERE id_supermercado=:id";
 
 			try {
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
 				$operacao->bindValue(":nome", $nome, PDO::PARAM_STR);
+        $operacao->bindValue(":cnpj", $cnpj, PDO::PARAM_STR);
         $operacao->bindValue(":endereco", $endereco, PDO::PARAM_STR);
         $operacao->bindValue(":telefone", $telefone, PDO::PARAM_STR);
         $operacao->bindValue(":email", $email, PDO::PARAM_STR);
