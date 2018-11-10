@@ -25,8 +25,10 @@
   $supermercadoDao = new SupermercadoDao();
 
   //-----Create-----FUNCIONA
-	$supermercado1 = new Supermercado("Nome Supermercado", "CNPJ do Supermercado ", "Endereco do Supermercado", "(--)--------","Email do Supermercado", "Senha do Supermercado", $cidade1);
-	$supermercadoDao->create($supermercado1);
+	$supermercado = new Supermercado("Nome Supermercado", "CNPJ do Supermercado ", "Endereco do Supermercado", "(--)--------","Email do Supermercado", "Senha do Supermercado", $cidade1);
+	$supermercadoDao->create($supermercado);
+
+	$supermercadoDao->inserirPreco($produto, $supermercado, "1.10");
 
   //-----Read-----FUNCIONA
   //$ler = $supermercadoDao->read(1);
@@ -41,8 +43,8 @@
 
   //-----Update-----FUNCIONA
   //$supermercado2 = $supermercadoDao->read(2);
-  $supermercado1->setNome("Um outro nome de Produto");
-  $supermercadoDao->update($supermercado1);
+  //$supermercado1->setNome("super2");
+ //$supermercadoDao->update($supermercado1);
 
   //-----Delete-----FUNCIONA
   //$supermercadoDao->delete(3);
