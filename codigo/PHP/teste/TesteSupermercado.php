@@ -39,7 +39,7 @@
   //echo $ler->getTelefone();
   //echo $ler->getEmail();
   //echo $ler->getSenha();
-  //echo $ler->getIdCidade();
+  //echo $ler->getCidade();
 
   //-----Update-----FUNCIONA
   //$supermercado2 = $supermercadoDao->read(2);
