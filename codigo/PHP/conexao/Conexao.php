@@ -12,8 +12,8 @@ class Conexao{
         if (!isset(self::$instancia)) {
             try {
                 $servidor = "mysql:host=localhost;dbname=mydb";
-                $usuario = "root";
-                $senha = "";
+                $usuario = "andrey";
+                $senha = "Margot12!";
 
                 self::$instancia = new PDO($servidor, $usuario, $senha);
 
