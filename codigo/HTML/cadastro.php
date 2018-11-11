@@ -25,8 +25,7 @@
 			<div class="container">
 				<div class="form_cadastro">
 					<form method="POST" action="verefica.php">
-					<h2>Login</br>
-					Usu&aacute;rio</h2></br></br>
+					<h2>Cadastro de Usu&aacute;rio</h2></br></br>
 
 					Nome:</br>
 					<input class="campo" type="text" name="nome" id="nome" placeholder="Informe o nome"></br></br>
