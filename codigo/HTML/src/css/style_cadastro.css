@@ -1,5 +1,5 @@
 body{
-	background-color: red;
+	background-color: #E6E6E6
 	margin: 0px;
 
 }
@@ -11,7 +11,7 @@ body{
 
 	display: flex;
 	justify-content: center;
-	padding: 20px 100px 0px 100px;
+	padding: 10px 100px 0px 100px;
 }
 
 .form_cadastro{
@@ -43,6 +43,7 @@ body{
 .form_cadastro h2{
 	text-align: center;
 	font-family: Montserrat;
+	font-size: 18px;
 }
 .cont1{
 	width: 100%;

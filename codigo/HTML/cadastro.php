@@ -1,3 +1,16 @@
+<?php
+	require_once '../PHP/dao/ClienteDao.php';
+
+	$objFn = new ClienteDao();
+
+	if(isset($_POST['btCadastrar'])){
+		if($objFn->create($_POST)){
+			header("location: /cadastro");
+		}else{
+			echo'<scrpit type="text/javascript">alert("Erro em cadastrar")</script>';
+		}
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -25,7 +38,7 @@
 			<div class="container">
 				<div class="form_cadastro">
 					<form method="POST" action="verefica.php">
-					<h2>Cadastro de Usu&aacute;rio</h2></br></br>
+					<h2>Cadastro de Usu&aacute;rios</h2></br></br>
 
 					Nome:</br>
 					<input class="campo" type="text" name="nome" id="nome" placeholder="Informe o nome"></br></br>
@@ -44,7 +57,7 @@
 
 					Data de Nascimento:</br>
 					<input class="campo" type="text" name="nasc" id="nasc" placeholder="Informe a data de "></br></br>
-					<center><input class="ui inverted primary button" type="submit" value="Cadastrar"></center>
+					<center><input class="ui inverted primary button" type="submit" name="btCadastrar" value="Cadastrar"></center>
 			</div>
 			</form>
 				</div>
