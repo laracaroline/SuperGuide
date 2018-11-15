@@ -22,7 +22,7 @@
 
 					<form method="POST" action="verefica.php">
 						<h2>Login</br>
-						Mercado</h2></br></br>
+						Supermercado</h2></br></br>
 
 						CNPJ:</br>
 						<input class="campo" type="text" name="cnpj" placeholder="Informe o CNPJ"></br></br>
@@ -49,7 +49,7 @@
 			</div>
 			<div class="ir_cadastro">
 				<div class="ir_cadastro">
-					<a href="#" class="ui inverted primary button" target="_blank">CRIAR CADASTRO</a>
+					<a href="identificar_cadastro.php" class="ui inverted primary button" target="_blank">CADASTRE-SE AQUI</a>
 				</div>
 			</div>
 		</div>

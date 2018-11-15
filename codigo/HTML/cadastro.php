@@ -1,5 +1,5 @@
 <?php
-	require_once '../PHP/dao/ClienteDao.php';
+	/**require_once "../PHP/dao/ClienteDao.php";
 
 	$objFn = new ClienteDao();
 
@@ -9,7 +9,7 @@
 		}else{
 			echo'<scrpit type="text/javascript">alert("Erro em cadastrar")</script>';
 		}
-	}
+	}**/
 ?>
 <!DOCTYPE html>
 <html>

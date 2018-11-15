@@ -1,16 +1,16 @@
 <?php
-	require_once "BaseCrudDao.php";
-	require_once "../conexao/Conexao.php";
-	
+	require_once("BaseCrudDao.php");
+	require_once('../conexao/Conexao.php');
+
 	class ClienteDao implements BaseCrudDao{
 		private $instanciaConexaoPdo;
 		private $tabela;
-		
+
 		function __construct(){
 			$this->instanciaConexaoPdo = Conexao::getInstancia();
 			$this->tabela = "clientes";
 		}
-		
+
 		public function create($cliente){
 			$id = $this->getNovoIdCliente();
 			$nome = $cliente->getNome();
@@ -21,9 +21,9 @@
 			$data_nasc = $cliente->getDataNasc();
 			$cidade = $cliente->getIdCidade();
 			$id_cidade = $cidade->getId();
-			
+
 			$sqlStmt = "INSERT INTO {$this->tabela} (id_cliente, nome_cliente, cpf_cliente, telefone_cliente, email_cliente, senha_cliente, data_nasc_cliente, id_cidade) VALUES (:id, :nome, :cpf, :telefone, :email, :senha, :data_nasc, :id_cidade)";
-			
+
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
@@ -34,7 +34,7 @@
 				$operacao->bindValue(":senha", $senha, PDO::PARAM_STR);
 				$operacao->bindValue(":data_nasc", $data_nasc, PDO::PARAM_STR);
 				$operacao->bindValue(":id_cidade", $id_cidade, PDO::PARAM_INT);
-				
+
 				if($operacao->execute()){
 					if($operacao->rowCount() > 0){
 						$cliente->setId($id);
@@ -49,7 +49,7 @@
 				echo $excecao->getMessage();
 			}
 		}
-		
+
 		public function read($id){
 			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_cliente=:id";
 			try{
@@ -71,7 +71,7 @@
 				echo $excecao->getMessage();
 			}
 		}
-		
+
 		public function update($cliente){
 			$id = $cliente->getId();
 			$nome = $cliente->getNome();
@@ -106,7 +106,7 @@
 				echo "erro";
 			}
 		}
-		
+
 		public function delete($id){
 			$sqlStmt = "DELETE FROM {$this->tabela} WHERE id_cliente=:id";
 			try{
@@ -126,7 +126,7 @@
 				echo "erro";
 			}
 		}
-		
+
 		public function getNovoIdCliente(){
 			$sql = "SELECT MAX(id_cliente) AS id_cliente FROM {$this->tabela}";
 			try{
