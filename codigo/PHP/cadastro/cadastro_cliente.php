@@ -35,6 +35,10 @@ $cidades = $cidadeDao->listarCidade();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="src/js/jquery.mask.min.js"></script>
 	<script type="text/javascript" src="../../HTML/src/js/mascaras.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/script_clientes.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/additional-methods.min.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/localization/messages_pt_BR.min.js"></script>
 
 	</head>
 
@@ -42,26 +46,27 @@ $cidades = $cidadeDao->listarCidade();
 		<div class="container">
 			<div class="container">
 				<div class="form_cadastro">
-					<form method="POST" action="inserir_cliente.php">
+					<form id="login_form" method="POST" action="inserir_cliente.php">
 					<h2>Cadastro de Usu&aacute;rios</h2></br></br>
+					<center><div class="form-message"></div></center>
 
 					Nome:</br>
-					<input class="campo" type="text" name="nome" id="nome" placeholder="Informe o nome"></br></br>
+					<input class="campo" type="text" name="nome" id="nome" placeholder="Informe o nome" required /></br></br>
 
 					CPF:</br>
-					<input class="campo" type="text" name="cpf" id="cpf" placeholder="Informe O CPF" /></br></br>
+					<input class="campo" type="text" name="cpf" id="cpf" placeholder="Informe O CPF"required /></br></br>
 
 					Telefone:</br>
-					<input class="campo" type="text" name="telefone" id="telefone" placeholder="Informe o telefone"></br></br>
+					<input class="campo" type="text" name="telefone" id="telefone" placeholder="Informe o telefone" required></br></br>
 
 					Email:</br>
-					<input class="campo" type="email" name="email" id="email" placeholder="Informe o email"></br></br>
+					<input class="campo" type="email" name="email" id="email" placeholder="Informe o email" required></br></br>
 
 					Senha:</br>
-					<input class="campo" type="password" name="senha" id="senha" placeholder="Informe a Senha"></br></br>
+					<input class="campo" type="password" name="senha" id="senha" placeholder="Informe a Senha" required></br></br>
 
           Cidade:</br>
-					<select name="cidade" class="ui dropdown">
+					<select id="cidade" name="cidade" class="ui dropdown" required>
 				    <?php
 							foreach ( $cidades as $k => $v ) {
 				        echo "<option value=\"" . $k . "\">" . $v . "</option>";
