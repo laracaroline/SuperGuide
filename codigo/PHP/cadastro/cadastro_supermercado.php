@@ -28,13 +28,14 @@ $cidades = $cidadeDao->listarCidade();
   crossorigin="anonymous"></script>
 	<script src="src/semantic.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="src/css/style_cadastro.css">
+	<link rel="stylesheet" type="text/css" href="../../HTML/src/css/style_cadastro.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="src/js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/jquery.mask.min.js"></script>
 	<script type="text/javascript" src="../../HTML/src/js/mascaras.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/script_supermercado.js"></script>
 
 	</head>
 
@@ -42,8 +43,9 @@ $cidades = $cidadeDao->listarCidade();
 		<div class="container">
 			<div class="container">
 				<div class="form_cadastro">
-					<form method="POST" action="inserir_supermercado.php">
+					<form id="login_form" method="POST" action="inserir_supermercado.php">
 					<h2>Cadastro de Supermercado</h2></br></br>
+					<center><div class="form-message"></div></center>
 
 					Nome:</br>
 					<input class="campo" type="text" name="nome" id="nome" placeholder="Informe o nome"></br></br>
