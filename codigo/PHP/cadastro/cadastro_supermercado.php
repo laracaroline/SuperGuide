@@ -34,7 +34,7 @@ $cidades = $cidadeDao->listarCidade();
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="src/js/jquery.mask.min.js"></script>
-	<script type="text/javascript" src="src/js/mascaras.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/mascaras.js"></script>
 
 	</head>
 

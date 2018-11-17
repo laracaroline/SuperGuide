@@ -16,7 +16,7 @@
   $cidadeObjeto = $cidadeDao->read($cidade);
   $cliente = new Cliente($nome, $cpf, $telefone, $email, $senha, $dataNascimento, $cidadeObjeto);
   $clienteDao = new ClienteDao();
-  
+
   if($clienteDao->create($cliente)){
     echo "Cliente inserido com sucesso!";
   } else{
