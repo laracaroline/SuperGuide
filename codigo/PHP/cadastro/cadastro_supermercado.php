@@ -36,6 +36,10 @@ $cidades = $cidadeDao->listarCidade();
 	<script type="text/javascript" src="../../HTML/src/js/jquery.mask.min.js"></script>
 	<script type="text/javascript" src="../../HTML/src/js/mascaras.js"></script>
 	<script type="text/javascript" src="../../HTML/src/js/script_supermercado.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/script_clientes.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/additional-methods.min.js"></script>
+	<script type="text/javascript" src="../../HTML/src/js/localization/messages_pt_BR.min.js"></script>
 
 	</head>
 

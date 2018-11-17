@@ -11,4 +11,36 @@ $(function(){
 			}
 		});
 	});
+
+	$(document).ready(function(){
+    $("#login_form").validate({
+      rules:{
+        nome:{
+          required: true,
+          maxlength: 100,
+          minlength: 6,
+          minWords: 2
+        },
+        cnpj:{
+          required: true
+        },
+        telefone:{
+          required: true,
+        },
+        email:{
+          requerid: true,
+          email: true
+        },
+				endereco:{
+					requerid: true
+				},
+        senha:{
+          requerid: true
+        },
+        cidade:{
+          requerid: true
+        }
+      }
+    })
+  })
 });
