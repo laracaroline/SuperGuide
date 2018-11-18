@@ -126,5 +126,29 @@
 				echo $excecao->getMessage();
 			}
 		}
+		public function listarCategoria(){
+			try {
+				$sqlStmt = "SELECT nome_categoria,descricao_categoria FROM {$this->tabela}";
+				//$sqlStmt = "SELECT nome_categoria FROM {$this->tabela}";
+				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+				$operacao->execute();
+
+				$categorias = new ArrayObject();
+
+				while ($getRow = $operacao->fetch(PDO::FETCH_OBJ)) {
+					$nome = $getRow->nome_categoria;
+					//$objeto = new Categoria($nome);
+
+					$descricao = $getRow->descricao_categoria;
+					$objeto = new Categoria($nome,$descricao);
+
+					$nomeCategoria = $objeto->getNome();
+					$categorias->append($nomeCategoria);
+				}
+				return $categorias;
+			} catch (PDOException $excecao) {
+				echo $excecao->getMessage();
+			}
+		}
 	}
 ?>

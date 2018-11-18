@@ -35,7 +35,7 @@
           <input class="campo" type="text" name="nome" id="nome" placeholder="Informe o nome"></br></br>
 
           Descri&ccedil;&atilde;o: </br>
-          <input class="campo" type="text" name="descricao" id="descricao" placeholder="Informe a descrição"></br></br>
+          <input class="campo" type="text" name="descricao" id="descricao" placeholder="Informe a descri&ccedil;&atilde;o"></br></br>
 
           <center><input class="ui inverted primary button" type="submit" name="btCadastrar" value="Cadastrar"></center>
         </div>
