@@ -16,10 +16,7 @@
 	</head>
 
 	<body>
-    <div class="identificar">
-      Identifique o seu tipo de cadastro!
-    </div>
-		<div class="container">
+    	<div class="container">
 			<div class="container">
 				<div class="menu1">
 					<form method="POST" action="..\PHP\cadastro\cadastro_supermercado.php">
