@@ -3,6 +3,8 @@
   include_once '../Produto.php';
   include_once '../dao/MarcaDao.php';
   include_once '../dao/CategoriaDao.php';
+  include_once '../Marca.php';//teste pra corrigir o erro
+  include_once '../Categoria.php';//teste pra corrigir o erro
 
   $nome = $_POST["nome"];
   $descricao = $_POST["descricao"];
