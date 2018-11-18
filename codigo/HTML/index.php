@@ -1,3 +1,15 @@
+<?php
+	require_once "../PHP/Cliente.php";
+	require_once "../PHP/dao/ClienteDao.php";
+	$clientes = new ArrayObject();
+	$clienteDao = new ClienteDao();
+	$clientes = $clienteDao->listarCliente();
+
+	if(isset($_POST['btnLogar'])){
+		$clientes->logarCliente($_POST);
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -37,7 +49,7 @@
 						<input class="campo" type="text" name="cnpj" id="cnpj" placeholder="Informe o CNPJ"></br></br>
 						Senha:</br>
 						<input class="campo" type="password" name="senha" id="senha_supermercado" placeholder="Informe a Senha"></br></br>
-						<center><input class="ui inverted primary button" type="submit" value="Fazer Login"></center>
+						<center><input name="btnLogar" id="btnLogar" class="ui inverted primary button" type="submit" value="Fazer Login"></center>
 
 					</form>
 				</div>
@@ -49,10 +61,10 @@
 					<center><div class="form-message"></div></center>
 
 					CPF:</br>
-					<input class="campo" type="text" name="cpf" id="cpf"placeholder="Informe o CPF"></br></br>
+					<input class="campo" type="text" name="cpf" id="cpf" placeholder="Informe o CPF"></br></br>
 					Senha:</br>
 					<input class="campo" type="password" name="senha" id="senha_cliente" placeholder="Informe a Senha"></br></br>
-					<center><input class="ui inverted primary button" type="submit" value="Fazer Login"></center>
+					<center><input name="btnLogar" id="btnLogar" class="ui inverted primary button" type="submit" value="Fazer Login"></center>
 			</div>
 			</form>
 				</div>
