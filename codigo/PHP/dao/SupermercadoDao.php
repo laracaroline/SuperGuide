@@ -75,7 +75,7 @@
         				$objeto->setId($id);
         				return $objeto;
         			}catch(PDOException $excecao){
-        				echo $excecao->getMessage;
+        				echo $excecao->getMessage();
         			}
           }
 
@@ -166,7 +166,7 @@
     public function inserirPreco($objetoProduto, $objetoSupermercado, $preco_produto){
       $id_produto = $objetoProduto->getId();
       $id_supermercado = $objetoSupermercado->getId();
-          
+
         $sql = "INSERT INTO preco_produtos (id_produto, id_supermercado, preco_produto) values (:id_produto, :id_supermercado, :preco_produto)";
 
         try{
@@ -186,7 +186,7 @@
 
       $id_produto = $objetoProduto->getId();
       $id_supermercado = $objetoSupermercado->getId();
-          
+
         $sql = "UPDATE preco_produtos SET id_produto = :id_produto, id_supermercado = :id_supermercado, preco_produto = :preco_produto WHERE id_supermercado = :id_supermercado AND id_produto = :id_produto";
 
         try{
