@@ -42,7 +42,7 @@
 		}
 
 		public function read($id){
-			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_cidade=:id";
+			$sqlStmt = "SELECT nome_cidade, id_estado FROM {$this->tabela} WHERE id_cidade=:id";
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
