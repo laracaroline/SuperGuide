@@ -1,23 +1,23 @@
 <?php
 	require_once "BaseCrudDao.php";
 	require_once "../conexao/Conexao.php";
-	
+
 	class MarcaDao implements BaseCrudDao {
 		private $instanciaConexaoPdo;
 		private $tabela;
-		
+
 		function __construct(){
 			$this->instanciaConexaoPdo = Conexao::getInstancia();
 			$this->tabela = "marcas"; //nome da tabela do banco de dados
 		}
-		
+
 		public function create($marca){
 			$id = $this->getNovoIdMarca(); //classe que gera um id
 			$nome = $marca->getNome(); // classe do Marca.php que pega o nome
 			$descricao = $marca->getDescricao(); // classe do Marca.php que pega a descricao
-			
+
 			$sqlStmt = "INSERT INTO {$this->tabela} (id_marca, nome_marca, descricao_marca) VALUES (:id, :nome, :descricao) ";
-			
+
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 					$operacao->bindValue(":id", $id, PDO::PARAM_INT);
@@ -37,7 +37,7 @@
 				echo $excecao->getMessage();
 			}
 		}
-		
+
 		public function read($id) {
 			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_marca=:id";
 			try {
@@ -45,8 +45,8 @@
 				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
 				$operacao->execute();
 				$getRow = $operacao->fetch(PDO::FETCH_OBJ);
-				$nome = $getRow->nome_marca;
-				$descricao = $getRow->descricao_marca;
+				$nome = $getRow->nome_marca;//ERRO
+				$descricao = $getRow->descricao_marca;//ERRO
 				$objeto = new Marca ($nome, $descricao);
 				$objeto->setId($id);
 				return $objeto;
@@ -54,7 +54,7 @@
 				echo $excecao->getMessage();
 			}
 		}
-		
+
 		public function update($marca) {
 			$id = $marca->getId();
 			$nome = $marca->getNome();
@@ -77,7 +77,7 @@
 				echo "Erro";
 			}
 		}
-		
+
 		public function delete($id) {
 			$sqlStmt = "DELETE FROM {$this->tabela} WHERE id_marca = :id";
 			try {
@@ -94,9 +94,9 @@
 				}
 			}catch (PDOException $excecao){
 				echo $excecao->getMessage();
-			}	
+			}
 		}
-		
+
 		private function getNovoIdMarca(){
 			$sql = "SELECT MAX(id_marca) AS id_marca FROM {$this->tabela}";
 			try {
@@ -115,6 +115,31 @@
 					exit();
 				}
 			}catch (PDOException $excecao) {
+				echo $excecao->getMessage();
+			}
+		}
+		public function listarMarca(){
+			try {
+				$sqlStmt = "SELECT nome_marca,descricao_marca FROM {$this->tabela}";
+				//$sqlStmt = "SELECT nome_marca FROM {$this->tabela}";
+				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+				$operacao->execute();
+
+				$marcas = new ArrayObject();
+
+				while ($getRow = $operacao->fetch(PDO::FETCH_OBJ)) {
+					$nome = $getRow->nome_marca;
+					///*
+					$descricao = $getRow->descricao_marca;
+					$objeto = new Marca($nome, $descricao);
+					//*/
+					//$objeto = new Marca($nome);
+
+					$nomeMarca = $objeto->getNome();
+					$marcas->append($nomeMarca);
+				}
+				return $marcas;
+			} catch (PDOException $excecao) {
 				echo $excecao->getMessage();
 			}
 		}

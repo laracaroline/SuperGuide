@@ -10,24 +10,25 @@
 	require_once "../dao/PaisDao.php";
 
   //Cria CEP
-  $pais1 = new Pais("Pais");
-  $paisDao = new PaisDao();
-  $paisDao->create($pais1);
+		$pais1 = new Pais("Pais");
+		$paisDao = new PaisDao();
+		$paisDao->create($pais1);
 
-  $estado1 = new Estado("Estado", $pais1);
-  $estadoDao = new EstadoDao();
-  $estadoDao->create($estado1);
+		$estado1 = new Estado("Estado", $pais1);
+		$estadoDao = new EstadoDao();
+		$estadoDao->create($estado1);
 
-  $cidade1 = new Cidade("Cidade", $estado1);
-  $cidadeDao = new CidadeDao();
-  $cidadeDao->create($cidade1);
+		$cidade1 = new Cidade("Cidade", $estado1);
+		$cidadeDao = new CidadeDao();
+		$cidadeDao->create($cidade1);
 
   $supermercadoDao = new SupermercadoDao();
 
-  //-----Create-----Nao funciona
-  //$supermercado1 = new Supermercado("Nome Supermercado", "CNPJ do Supermercado ", "Endereco do Supermercado", "(--)--------","Email do Supermercado", "Senha do Supermercado", "Como colocar esse Blob...", $cidade1);
+  //-----Create-----FUNCIONA
+	$supermercado = new Supermercado("Nome Supermercado", "CNPJ do Supermercado ", "Endereco do Supermercado", "(--)--------","Email do Supermercado", "Senha do Supermercado", $cidade1);
+	$supermercadoDao->create($supermercado);
 
-  //$supermercadoDao->create($supermercado1);
+	$supermercadoDao->inserirPreco($produto, $supermercado, "1.10");
 
   //-----Read-----FUNCIONA
   //$ler = $supermercadoDao->read(1);
@@ -38,12 +39,12 @@
   //echo $ler->getTelefone();
   //echo $ler->getEmail();
   //echo $ler->getSenha();
-  //echo $ler->getIdCidade();
+  //echo $ler->getCidade();
 
-  //-----Update-----Nao funciona
+  //-----Update-----FUNCIONA
   //$supermercado2 = $supermercadoDao->read(2);
-  //$supermercado2->setNome("Um outro nome de Produto");
-  //$supermercadoDao->update($supermercado2);
+  //$supermercado1->setNome("super2");
+ //$supermercadoDao->update($supermercado1);
 
   //-----Delete-----FUNCIONA
   //$supermercadoDao->delete(3);
