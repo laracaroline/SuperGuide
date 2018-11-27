@@ -1,12 +1,12 @@
 body{
 	background-color: #E6E6E6;
 	margin: 0px;
-
+	
 }
 
 .container{
 	background-color: #E6E6E6;
-
+	
 
 	display: flex;
 	justify-content: center;
@@ -16,40 +16,37 @@ body{
 .menu1{
 	height: 40vh;
 	width: 40vw;
-
+	
 	background-color: #808080;
-
-	box-shadow: 5px 2px 3px  #888888;
-
+	
+	
 	flex-direction: collumn;
 	display: flex;
-
+	
 	border-bottom-left-radius: 10px;
 	border-top-left-radius: 10px;
-
+	
 	justify-content: center;
-	align-items: center;
-
+	align-items: center;	
+		
 	font-family: Montserrat, Regular;
 	color: white
-
-
+	
+	
 }
 
 .menu2{
 	height: 40vh;
 	width: 40vw;
-
+	
 	background-color: white;
-
-	box-shadow: 5px 2px 3px  #888888;
 	
 	flex-direction: collumn;
 	display: flex;
-
+	
 	border-bottom-right-radius: 10px;
 	border-top-right-radius: 10px;
-
+	
 	justify-content: center;
 	align-items: center;
 	font-family: Montserrat, Regular;
@@ -83,7 +80,7 @@ body{
 	width: 100%;
 	display: flex;
 	justify-content: center;
-
+	
 }
 .cont2{
 	width: 100%;
@@ -92,13 +89,13 @@ body{
 }
 
 .campo{
-
+	
 	border-radius: 8px;
-
+	
 	height: 30px;
-
+	
 	padding: 5px;
-
+	
 	border:none;
 	background-color: #D3D3D3;
 }
@@ -121,3 +118,8 @@ body{
 .ir_cadastro a:hover{
 	color: orange;
 }
+
+
+
+
+

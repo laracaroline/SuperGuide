@@ -10,21 +10,8 @@
 	require_once "../Cidade.php";
 	require_once "../dao/CidadeDao.php";
 
-	$cidades = new ArrayObject();
-	$cidadeDao = new CidadeDao();
-	$cidades = $cidadeDao->listarCidade();
 
-	echo "<select>";
-    foreach ( $cidades as $k => $v ) {
-        echo "<option value=\"" . $k . "\">" . $v . "</option>";
-    }
-	echo "</select>";
-	/*while($cidades = $cidadeDao->listarCidade()){
-		print_r($cidades);
-	}*/
-	//print_r($cidadeDao->listarCidade());
-	//$lerCidade = $cidadeDao->read(3);
-	/*$pais1 = new Pais("Brasil");
+	$pais1 = new Pais("Brasil");
 	$pais2 = new Pais("Canada");
 
 	$paisDao = new PaisDao();
@@ -58,6 +45,6 @@
 
 	$cidadeDao->update($lerContato);
 
-	//$cidadeDao->delete(2); */
+	//$cidadeDao->delete(2); 
 
 ?>

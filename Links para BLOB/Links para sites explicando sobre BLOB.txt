@@ -1,4 +1,0 @@
-https://www.devmedia.com.br/armazenando-imagens-no-mysql/32104
-http://php.net/manual/pt_BR/function.fopen.php
-http://php.net/manual/pt_BR/function.fread.php
-http://php.net/manual/pt_BR/function.addslashes.php
