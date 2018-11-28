@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MenuActivity" />
         <activity android:name=".InfoActivity" />
-        <activity android:name=".HistoricoActivity"></activity>
+        <activity android:name=".HistoricoActivity" />
+        <activity android:name=".ListFiguras"></activity>
     </application>
 
 </manifest>
