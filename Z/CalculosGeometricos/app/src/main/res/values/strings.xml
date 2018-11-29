@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">CalculosGeometricos</string>
-    <string name="info">Info</string>
-    <string name="iniciar">Iniciar</string>
-    <string name="hist_rico">Histórico</string>
-    <string name="bidimensional">bidimensional</string>
-    <string name="tridimensional">Tridimensional</string>
-    <string name="a_figura_que_ser_utilizada_para_o_calculo">A figura que será utilizada para o calculo é</string>
-</resources>
