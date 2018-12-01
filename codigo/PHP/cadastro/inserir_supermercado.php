@@ -11,9 +11,9 @@
   $cidade = $_POST["cidade"];
   $senha = $_POST["senha"];
 
-  //echo $cidade;
+
   $cidadeDao = new CidadeDao();
-  $cidadeObjeto = $cidadeDao->read($cidade);
+  $cidadeObjeto = $cidadeDao->read(++$cidade);
   $supermercado = new Supermercado($nome, $cnpj, $endereco, $telefone, $email, $senha, $cidadeObjeto);
   $supermercadoDao = new SupermercadoDao();
 

@@ -126,19 +126,19 @@
 
 		public function listarCidade(){
 			try{
-			$sqlStmt = "SELECT nome_cidade, id_estado FROM {$this->tabela}";
+			$sqlStmt = "SELECT id_cidade, nome_cidade, id_estado FROM {$this->tabela}";
 			$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 			$operacao->execute();
 
 			$cidades = new ArrayObject();
 
 			while($getRow = $operacao->fetch(PDO::FETCH_OBJ)){
+				$id_cidade = $getRow->id_cidade;
 				$nome = $getRow->nome_cidade;
 				$id_estado = $getRow->id_estado;
 				$objeto = new Cidade($nome, $id_estado);
-
-				$nomeCidade = $objeto->getNome();
-				$cidades->append($nomeCidade);
+				$objeto->setId($id_cidade);
+				$cidades->append($objeto);
 			}
 			return $cidades;
 

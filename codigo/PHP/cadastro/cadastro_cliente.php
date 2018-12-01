@@ -1,7 +1,7 @@
 <?php
 require_once "../Cidade.php";
 require_once "../dao/CidadeDao.php";
-$cidades = new ArrayObject();
+// $cidades = new ArrayObject();
 $cidadeDao = new CidadeDao();
 $cidades = $cidadeDao->listarCidade();
 	/**require_once "../PHP/dao/ClienteDao.php";
@@ -68,8 +68,10 @@ $cidades = $cidadeDao->listarCidade();
           Cidade:</br>
 					<select id="cidade" name="cidade" class="ui dropdown" required>
 				    <?php
+						// print_r($cidades[0]->getId);
 							foreach ( $cidades as $k => $v ) {
-				        echo "<option value=\"" . $k . "\">" . $v . "</option>";
+				        // echo "<option value=\"" . $k . "\">" . $v . "</option>";
+				        echo "<option value=\"" . $v->getId() . "\">" . $v->getNome() . "</option>";
 				    	}
 						?>
 					</select>

@@ -15,9 +15,9 @@
   //echo $marca
   //echo $categoria;
   $marcaDao = new MarcaDao();
-  $marcaObjeto = $marcaDao->read($marca);
+  $marcaObjeto = $marcaDao->read(++$marca);
   $categoriaDao = new CategoriaDao();
-  $categoriaObjeto = $categoriaDao->read($categoria);
+  $categoriaObjeto = $categoriaDao->read(++$categoria);
   $produto = new Produto($nome, $descricao, $marcaObjeto, $categoriaObjeto);
   $produtoDao = new ProdutoDao();
 

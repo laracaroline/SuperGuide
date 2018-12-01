@@ -39,14 +39,14 @@
 		}
 
 		public function read($id) {
-			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_marca=:id";
+			$sqlStmt = "SELECT nome_marca, descricao_marca FROM {$this->tabela} WHERE id_marca=:id";
 			try {
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
 				$operacao->execute();
 				$getRow = $operacao->fetch(PDO::FETCH_OBJ);
-				$nome = $getRow->nome_marca;//ERRO
-				$descricao = $getRow->descricao_marca;//ERRO
+				$nome = $getRow->nome_marca;
+				$descricao = $getRow->descricao_marca;
 				$objeto = new Marca ($nome, $descricao);
 				$objeto->setId($id);
 				return $objeto;

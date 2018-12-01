@@ -149,7 +149,7 @@
 			}
 		}
 
-		public function logarCliente($dado){
+	/*	public function logarCliente($dado){
 			$this->cpf = $dado['cpf'];
 			$this->senha = $dado['senha'];
 			try{
@@ -169,6 +169,6 @@
 			}catch(PDOException $excecao){
 				return $excecao->getMessage();
 			}
-		}
+		}*/
 	}
 ?>
