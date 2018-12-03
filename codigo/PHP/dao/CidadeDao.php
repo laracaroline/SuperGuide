@@ -126,7 +126,7 @@
 
 		public function listarCidade(){
 			try{
-			$sqlStmt = "SELECT id_cidade, nome_cidade, id_estado FROM {$this->tabela}";
+			$sqlStmt = "SELECT * FROM {$this->tabela} ORDER BY nome_cidade";
 			$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 			$operacao->execute();
 

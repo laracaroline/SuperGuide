@@ -163,18 +163,46 @@
         }
     }
 
+    public function listarSupermercados(){
+			try{
+			$sqlStmt = "SELECT * FROM {$this->tabela}";
+			$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+			$operacao->execute();
+
+			$supermercados = new ArrayObject();
+
+			while($getRow = $operacao->fetch(PDO::FETCH_OBJ)){
+				$id = $getRow->id_supermercado;
+				$nome = $getRow->nome_supermercado;
+        $cnpj = $getRow->cnpj_supermercado;
+        $endereco = $getRow->endereco_supermercado;
+        $telefone = $getRow->telefone_supermercado;
+        $email = $getRow->email_supermercado;
+        $senha = $getRow->senha_supermercado;
+				$id_cidade = $getRow->id_cidade;
+				$objeto = new Supermercado($nome, $cnpj, $endereco, $telefone, $email, $senha, $id_cidade);
+				$objeto->setId($id);
+				$supermercados->append($objeto);
+			}
+			return $supermercados;
+
+			}catch(PDOException $excecao){
+				echo $excecao->getMessage();
+			}
+		}
+
     public function inserirPreco($objetoProduto, $objetoSupermercado, $preco_produto){
+
       $id_produto = $objetoProduto->getId();
       $id_supermercado = $objetoSupermercado->getId();
 
-        $sql = "INSERT INTO preco_produtos (id_produto, id_supermercado, preco_produto) values (:id_produto, :id_supermercado, :preco_produto)";
+        $sql = "INSERT INTO preco_produtos (id_produto, preco_produto, id_supermercado) values (:id_produto, :preco_produto, :id_supermercado)";
 
         try{
           $operacao = $this->instanciaConexaoPdo->prepare($sql);
           $operacao->bindValue(":id_produto", $id_produto, PDO::PARAM_INT);
-          $operacao->bindValue(":id_supermercado", $id_supermercado, PDO::PARAM_INT);
           $operacao->bindValue(":preco_produto", $preco_produto, PDO::PARAM_STR);
-
+          $operacao->bindValue(":id_supermercado", $id_supermercado, PDO::PARAM_INT);
           $operacao->execute();
         } catch (PDOException $excecao) {
             echo $excecao->getMessage();

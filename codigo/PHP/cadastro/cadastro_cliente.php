@@ -1,6 +1,11 @@
 <?php
 require_once "../Cidade.php";
 require_once "../dao/CidadeDao.php";
+require_once "../Estado.php";
+require_once "../dao/EstadoDao.php";
+
+$estadoDao = new EstadoDao();
+$estados = $estadoDao->listarEstado();
 $cidadeDao = new CidadeDao();
 $cidades = $cidadeDao->listarCidade();
 	/**require_once "../PHP/dao/ClienteDao.php";
@@ -64,11 +69,21 @@ $cidades = $cidadeDao->listarCidade();
 					Senha:</br>
 					<input class="campo" type="password" name="senha" id="senha" placeholder="Informe a Senha" required></br></br>
 
+					Estado:</br>
+					<select id="estado" name="estado" class="ui dropdown" required>
+				    <?php
+							foreach ( $estados as $k => $v ) {
+				        echo "<option value=\"" . $v->getId() . "\">" . utf8_encode($v->getNome()) . "</option>";
+				    	}
+						?>
+					</select>
+					<br/> <br/>
+					
           Cidade:</br>
 					<select id="cidade" name="cidade" class="ui dropdown" required>
 				    <?php
 							foreach ( $cidades as $k => $v ) {
-				        echo "<option value=\"" . $v->getId() . "\">" . $v->getNome() . "</option>";
+				        echo "<option value=\"" . $v->getId() . "\">" . utf8_encode($v->getNome()) . "</option>";
 				    	}
 						?>
 					</select>

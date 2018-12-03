@@ -125,5 +125,28 @@
                 echo $excecao->getMessage();
             }
         }
+
+        public function listarEstado(){
+    			try{
+    			$sqlStmt = "SELECT * FROM {$this->tabela} ORDER BY nome_estado";
+    			$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+    			$operacao->execute();
+
+    			$estados = new ArrayObject();
+
+    			while($getRow = $operacao->fetch(PDO::FETCH_OBJ)){
+    				$id = $getRow->id_estado;
+    				$nome = $getRow->nome_estado;
+    				$id_pais = $getRow->id_pais;
+    				$objeto = new Estado($nome, $id_pais);
+    				$objeto->setId($id);
+    				$estados->append($objeto);
+    			}
+    			return $estados;
+
+    			}catch(PDOException $excecao){
+    				echo $excecao->getMessage();
+    			}
+    		}
     }
 ?>

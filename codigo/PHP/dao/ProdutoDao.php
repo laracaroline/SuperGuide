@@ -150,5 +150,30 @@
                 echo $excecao->getMessage();
             }
         }
+
+        public function listarProdutos(){
+    			try{
+    			$sqlStmt = "SELECT * FROM {$this->tabela} ORDER BY nome_produto";
+    			$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+    			$operacao->execute();
+
+    			$produtos = new ArrayObject();
+
+    			while($getRow = $operacao->fetch(PDO::FETCH_OBJ)){
+    				$id = $getRow->id_produto;
+    				$nome = $getRow->nome_produto;
+            $descricao = $getRow->descricao_produto;
+    				$id_marca = $getRow->id_marca;
+            $id_categoria = $getRow->id_categoria;
+    				$objeto = new Produto($nome, $descricao, $id_marca, $id_categoria);
+    				$objeto->setId($id);
+    				$produtos->append($objeto);
+    			}
+    			return $produtos;
+
+    			}catch(PDOException $excecao){
+    				echo $excecao->getMessage();
+    			}
+    		}
     }
 ?>
