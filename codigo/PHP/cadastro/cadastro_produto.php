@@ -1,13 +1,11 @@
 <?php
   require_once "../Marca.php";
   require_once "../dao/MarcaDao.php";
-  $marcas = new ArrayObject();
   $marcaDao = new MarcaDao();
   $marcas = $marcaDao->listarMarca();
 
   require_once "../Categoria.php";
   require_once "../dao/CategoriaDao.php";
-  $categorias = new ArrayObject();
   $categoriaDao = new CategoriaDao();
   $categorias = $categoriaDao->listarCategoria();
 
@@ -65,7 +63,7 @@
             <select id="categoria" name="categoria" class="ui dropdown" required>
               <?php
                 foreach ($categorias as $k => $v) {
-                  echo "<option value=\"" . $k . "\">" . $v ."</option>";
+                    echo "<option value=\"" . $v->getId() . "\">" . $v->getNome() . "</option>";
                 }
               ?>
             </select>
@@ -75,7 +73,7 @@
             <select id="marca" name="marca" class="ui dropdown" required>
               <?php
                 foreach ($marcas as $k => $v) {
-                  echo "<option value=\"" . $k . "\">" . $v ."</option>";
+                  echo "<option value=\"" . $v->getId() . "\">" . $v->getNome() . "</option>";
                 }
               ?>
             </select>

@@ -120,25 +120,22 @@
 		}
 		public function listarMarca(){
 			try {
-				$sqlStmt = "SELECT nome_marca,descricao_marca FROM {$this->tabela}";
-				//$sqlStmt = "SELECT nome_marca FROM {$this->tabela}";
+				$sqlStmt = "SELECT id_marca, nome_marca, descricao_marca FROM {$this->tabela}";
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
 				$operacao->execute();
 
 				$marcas = new ArrayObject();
 
 				while ($getRow = $operacao->fetch(PDO::FETCH_OBJ)) {
+					$id = $getRow->id_marca;
 					$nome = $getRow->nome_marca;
-					///*
 					$descricao = $getRow->descricao_marca;
 					$objeto = new Marca($nome, $descricao);
-					//*/
-					//$objeto = new Marca($nome);
-
-					$nomeMarca = $objeto->getNome();
-					$marcas->append($nomeMarca);
+					$objeto->setId($id);
+					$marcas->append($objeto);
 				}
 				return $marcas;
+
 			} catch (PDOException $excecao) {
 				echo $excecao->getMessage();
 			}

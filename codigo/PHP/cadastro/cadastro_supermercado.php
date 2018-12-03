@@ -1,7 +1,6 @@
 <?php
 require_once "../Cidade.php";
 require_once "../dao/CidadeDao.php";
-$cidades = new ArrayObject();
 $cidadeDao = new CidadeDao();
 $cidades = $cidadeDao->listarCidade();
 	/**require_once "../dao/SupermercadoDao.php";
@@ -66,10 +65,10 @@ $cidades = $cidadeDao->listarCidade();
 					<input class="campo" type="email" name="email" id="email" placeholder="Informe o e-mail"></br></br>
 
 					Cidade:</br>
-					<select name="cidade" class="ui dropdown">
+					<select id="cidade" name="cidade" class="ui dropdown" required>
 				    <?php
 							foreach ( $cidades as $k => $v ) {
-				        echo "<option value=\"" . $k . "\">" . $v . "</option>";
+				        echo "<option value=\"" . $v->getId() . "\">" . $v->getNome() . "</option>";
 				    	}
 						?>
 					</select>
