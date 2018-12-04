@@ -149,26 +149,5 @@
 			}
 		}
 
-	/*	public function logarCliente($dado){
-			$this->cpf = $dado['cpf'];
-			$this->senha = $dado['senha'];
-			try{
-				$cst = $this->con->conectar()->prepare("SELECT 'id_cliente', 'cpf_cliente', 'nome_cliente', 'email_cliente', 'senha_cliente' FROM 'clientes' WHERE 'cpf_cliente' = :cpf AND 'senha_cliente' = :senha;");
-				$cst->bindParam(":cpf", this->cpf, PDO::PARAM_STR);
-				$cst->bindParam(":senha", this->senha, PDO::PARAM_STR);
-				$cst->execute();
-				if($cst->rowCount() == 0){
-					header('location:../../HTML/index');
-				}else{
-					session start();
-					$rst  = $cst->fetch();
-					$_SESSION['logado'] = "sim";
-					$_SESSION['cliente'] = $rst['id_cliente'];
-					header('location: ../..HTML/home');
-				}
-			}catch(PDOException $excecao){
-				return $excecao->getMessage();
-			}
-		}*/
 	}
 ?>

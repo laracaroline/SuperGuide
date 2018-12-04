@@ -1,5 +1,7 @@
 <?php
-	require_once "../PHP/Cliente.php";
+	require_once '../PHP/conexao/Conexao.php';
+
+	/*require_once "../PHP/Cliente.php";
 	require_once "../PHP/dao/ClienteDao.php";
 	$clientes = new ArrayObject();
 	$clienteDao = new ClienteDao();
@@ -7,7 +9,8 @@
 
 	if(isset($_POST['btnLogar'])){
 		$clientes->logarCliente($_POST);
-	}
+	}*/
+
 ?>
 
 <!DOCTYPE html>
