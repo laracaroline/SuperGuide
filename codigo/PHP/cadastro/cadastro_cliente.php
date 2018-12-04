@@ -78,7 +78,7 @@ $cidades = $cidadeDao->listarCidade();
 						?>
 					</select>
 					<br/> <br/>
-					
+
           Cidade:</br>
 					<select id="cidade" name="cidade" class="ui dropdown" required>
 				    <?php
