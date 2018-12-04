@@ -18,8 +18,7 @@ $(function(){
         nome:{
           required: true,
           maxlength: 100,
-          minlength: 4,
-          minWords: 2
+          minlength: 2
         },
         descricao:{
           required: true
