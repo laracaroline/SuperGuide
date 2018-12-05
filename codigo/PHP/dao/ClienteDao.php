@@ -149,5 +149,20 @@
 			}
 		}
 
+		public function logar($cpf, $senha){
+			$sql = $pdo->prepare("SELECT id_cliente FROM clientes WHERE cpf_cliente = :c AND senha_cliente = :s");
+			$sql->blindValue(":c", $cpf);
+			$sql->blindValue(":s", $senha);
+			$sql->execute();
+
+			if($sql->rowCount() > 0){
+				$dado = $sql->fetch();
+				session_start();
+				$_SESSION['id_cliente'] = $dado['id_cliente'];
+				return true; //logado com sucesso
+			}else{
+				return false; //nao foi possivel logar
+			}
 	}
+}
 ?>
