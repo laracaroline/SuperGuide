@@ -80,12 +80,8 @@ $cidades = $cidadeDao->listarCidade();
 					<br/> <br/>
 
           Cidade:</br>
-					<select id="cidade" name="cidade" class="ui dropdown" required>
-				    <?php
-							foreach ( $cidades as $k => $v ) {
-				        echo "<option value=\"" . $v->getId() . "\">" . utf8_encode($v->getNome()) . "</option>";
-				    	}
-						?>
+					<select id="cidade" name="cidade" class="ui dropdown" required style="display:none">
+				    
 					</select>
 					<br/> <br/>
 
