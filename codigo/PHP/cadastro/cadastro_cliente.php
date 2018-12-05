@@ -81,7 +81,7 @@ $cidades = $cidadeDao->listarCidade();
 
           Cidade:</br>
 					<select id="cidade" name="cidade" class="ui dropdown" required style="display:none">
-				    
+
 					</select>
 					<br/> <br/>
 
