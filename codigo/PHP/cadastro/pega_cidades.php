@@ -19,6 +19,7 @@
   $operacao->bindValue(":id", $id, PDO::PARAM_INT);
   $operacao->execute();
 
+  //$sql = ("SELECT * FROM cidades WHERE id_estado='".$_POST['id']."'");
 
     foreach ( $cidades as $k => $v ) {
       echo "<option value=\"" . $v->getId() . "\">" . utf8_encode($v->getNome()) . "</option>";
