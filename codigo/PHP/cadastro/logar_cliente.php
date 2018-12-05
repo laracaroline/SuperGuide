@@ -20,7 +20,7 @@
 
         if(!empty($cpf) && !empty($senha)){
           if ($clienteDao->logar($cpf, $senha)){
-            header("location: privada.php");
+            header("location: home.php");
           }else{
             echo "Email e/ou senha invalidos";
           }
