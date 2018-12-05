@@ -3,11 +3,17 @@
   require_once "../dao/CidadeDao.php";
   require_once "../Estado.php";
   require_once "../dao/EstadoDao.php";
+  require_once '../conexao/Conexao.php';
 
   $estadoDao = new EstadoDao();
   $estados = $estadoDao->listarEstado();
   $cidadeDao = new CidadeDao();
   $cidades = $cidadeDao->listarCidade();
+
+  function __construct(){
+    $this->instanciaConexaoPdo = Conexao::getInstancia();
+    $this->tabela = "clientes";
+  }
 
   $operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
   $operacao->bindValue(":id", $id, PDO::PARAM_INT);
