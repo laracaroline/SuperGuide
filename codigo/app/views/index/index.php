@@ -1,5 +1,5 @@
 <?php
-	require_once '../../../PHP/conexao/Conexao.php';
+	require_once 'Conexao.php';
 	require_once "../Cliente.php";
 	require_once "../dao/ClienteDao.php";
 
