@@ -60,6 +60,10 @@ body{
   height: 25px;
 }
 
+.cabecalho a{
+	text-decoration: none;
+	color: white;
+}
 
 .conteiner{
 	padding: 50px;

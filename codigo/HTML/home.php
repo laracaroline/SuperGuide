@@ -37,7 +37,7 @@
 					  <input type="text" id="txtBusca" placeholder="Buscar..."/>
 					  <button id="btnBusca">Buscar</button>
 					</div>
-
+					<a href="" id="sair">Sair</a>
 			</nav>
 		</header>
 
