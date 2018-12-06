@@ -4,12 +4,18 @@ body{
 
 }
 
+nav li{
+	list-style: none;
+  font-family: 'Montserrat';
+}
+
 .cabecalho{
+	padding: 15px;
 	display: flex;
 	flex-direction: row;
 
   width: auto;
-  height: 70px;
+  height: auto;
   background-color: #35373b;
   justify-content: center;
 
@@ -60,13 +66,14 @@ body{
   height: 25px;
 }
 
+
 .cabecalho a{
 	text-decoration: none;
-	color: white;
+	color: black;
 }
 
 .conteiner{
-	padding: 50px;
+	padding: 25px;
 
 	display: flex;
 	flex-direction: row;

@@ -37,7 +37,18 @@
 					  <input type="text" id="txtBusca" placeholder="Buscar..."/>
 					  <button id="btnBusca">Buscar</button>
 					</div>
-					<a href="" id="sair">Sair</a>
+
+					<div class="ui compact menu" id="menu">
+					  <div class="ui simple dropdown item">
+					    Menu
+					    <i class="dropdown icon"></i>
+					    <div class="menu">
+					      <div class="item"><a href="atualizar_perfil.php" id="atualizar_perfil">Atualizar perfil</a></div>
+					      <div class="item"><a href="logout.php" id="sair">Sair</a></div>
+					    </div>
+					  </div>
+					</div>
+
 			</nav>
 		</header>
 
@@ -53,29 +64,14 @@
 
 				</thead>
 				<tbody>
+
 					<?php
 						foreach ( $supermercados as $k => $v ) {
-							echo "<tr> <td\"" . $v->getId() . "\">"
-							. utf8_encode($v->getNome()) .
-							"</td>
-
-							<td\"" . $v->getId() . "\">"
-							. utf8_encode($v->getCnpj()) .
-							"</td>
-
-							<td\"" . $v->getId() . "\">"
-							. utf8_encode($v->getSenha()) .
-							"</td>
-
-							</tr>";
+							echo "<tr> <td>" 	. utf8_encode($v->getNome()) . "</td>".
+							"<td>" 	. utf8_encode($v->getCnpj()) . "</td>".
+							"<td>" 	. utf8_encode($v->getSenha()) . "</td>";
 						}
 					?>
-					<tr>
-			      <td>Mercadfrutas</td>
-			      <td>Arroz</td>
-			      <td>55</td>
-    			</tr>
-
 				</tbody>
 			</table>
 

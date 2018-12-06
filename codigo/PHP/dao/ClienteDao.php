@@ -165,6 +165,7 @@
 			if($sql->rowCount() > 0){
 				$dado = $sql->fetch();
 				session_start();
+				$_SESSION['logado'] = true;
 				$_SESSION['id_cliente'] = $dado['id_cliente'];
 				return true; //logado com sucesso
 			}else{
