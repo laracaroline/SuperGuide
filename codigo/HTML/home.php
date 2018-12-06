@@ -44,23 +44,7 @@
 		<div class="conteiner">
 			<table class="ui grey table">
 				<thead>
-					<?php
-						foreach ( $cidades as $k => $v ) {
-							echo "<tr> <th\"" . $v->getId() . "\">"
-							. utf8_encode($v->getNome()) .
-							"</th>
 
-							<th\"" . $v->getId() . "\">"
-							. utf8_encode($v->getCnpj()) .
-							"</th>
-
-							<th\"" . $v->getId() . "\">"
-							. utf8_encode($v->getSenha()) .
-							"</th>
-
-							</tr>";
-						}
-					?>
 					<tr>
 						<th>Nome do Supermercado</th>
 						<th>Nome do Produto</th>
@@ -69,7 +53,23 @@
 
 				</thead>
 				<tbody>
+					<?php
+						foreach ( $supermercados as $k => $v ) {
+							echo "<tr> <td\"" . $v->getId() . "\">"
+							. utf8_encode($v->getNome()) .
+							"</td>
 
+							<td\"" . $v->getId() . "\">"
+							. utf8_encode($v->getCnpj()) .
+							"</td>
+
+							<td\"" . $v->getId() . "\">"
+							. utf8_encode($v->getSenha()) .
+							"</td>
+
+							</tr>";
+						}
+					?>
 					<tr>
 			      <td>Mercadfrutas</td>
 			      <td>Arroz</td>
