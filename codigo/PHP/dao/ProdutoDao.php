@@ -1,6 +1,6 @@
 <?php
     require_once "BaseCrudDao.php";
-    require_once "../conexao/Conexao.php";
+    //require_once "../conexao/Conexao.php";
 
     class ProdutoDao implements BaseCrudDao {
         private $instanciaConexaoPdo;
