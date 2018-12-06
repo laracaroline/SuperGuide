@@ -1,5 +1,5 @@
 body{
-	background-color: #E6E6E6;
+	background-color: #e9eaed;
 	margin: 0px;
 
 }
@@ -55,4 +55,11 @@ body{
   float:left;
   width: 25px;
   height: 25px;
+}
+
+
+.conteiner{
+  width: auto;
+  height: 100%;
+  background-color: red;
 }
