@@ -1,0 +1,58 @@
+body{
+	background-color: #E6E6E6;
+	margin: 0px;
+
+}
+
+.cabecalho{
+  width: auto;
+  height: 70px;
+  background-color: #35373b;
+  justify-content: center;
+
+}
+
+#tamlogo{
+  margin-left: 5%;
+  width: 80px;
+  height: 50px;
+}
+
+#divBusca{
+  background-color:#E0EEEE;
+  border:solid 2px #5F9EA0;
+  border-radius:10px;
+  width:300px;
+  height:32px;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:191px;
+}
+
+#btnBusca{
+  border:none;
+  float:left;
+  height:30px;
+  border-radius:0 7px 7px 0;
+  width: 71px;
+  font-weight:bold;
+  background:#5F9EA0;
+}
+
+#btnBusca:hover{
+   background-color: yellow;
+}
+
+#divBusca img{
+  margin-left: 3%;
+  float:left;
+  width: 25px;
+  height: 25px;
+}
