@@ -43,9 +43,9 @@ $(function(){
 
 	$("#estado").on("change", function(){
 		var idEstado = $("#estado").val();
-		
 
-		$.ajax({
+
+	$.ajax({
 			url: 'pega_cidades.php',
 			type: 'POST',
 			data: {id:idEstado},
@@ -56,7 +56,7 @@ $(function(){
 			success: function(data){
 				$("#cidade").css({'display':'block'});
 				$("#cidade").html(data);
-			},
+		},
 			error: function(data){
 				$("#cidade").css({'display':'block'});
 				$("#cidade").html("Erro ao carregar");

@@ -5,6 +5,9 @@ body{
 }
 
 .cabecalho{
+	display: flex;
+	flex-direction: row;
+
   width: auto;
   height: 70px;
   background-color: #35373b;
@@ -19,7 +22,7 @@ body{
 }
 
 #divBusca{
-  background-color:#E0EEEE;
+  background-color:#e9eaed;
   border:solid 2px #5F9EA0;
   border-radius:10px;
   width:300px;
@@ -43,7 +46,7 @@ body{
   border-radius:0 7px 7px 0;
   width: 71px;
   font-weight:bold;
-  background:#5F9EA0;
+  background: #5F9EA0;
 }
 
 #btnBusca:hover{
@@ -59,7 +62,12 @@ body{
 
 
 .conteiner{
+	padding: 50px;
+
+	display: flex;
+	flex-direction: row;
+
   width: auto;
   height: 100%;
-  background-color: red;
+  background-color: #e9eaed;
 }

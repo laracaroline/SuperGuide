@@ -8,20 +8,21 @@
 		private $senha;
 		private $data_nasc;
 		private $id_cidade;
-		
-		// public function __construct($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade){
-		// 	$this->nome = $nome;
-		// 	$this->cpf = $cpf;
-		// 	$this->telefone = $telefone;
-		// 	$this->email = $email;
-		// 	$this->senha = $senha;
-		// 	$this->data_nasc = $data_nasc;
-		// 	$this->id_cidade = $id_cidade;
-		// }
+
+		 public function __construct($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade){
+		 	$this->nome = $nome;
+		 	$this->cpf = $cpf;
+			$this->telefone = $telefone;
+			$this->email = $email;
+			$this->senha = $senha;
+		 	$this->data_nasc = $data_nasc;
+		 	$this->id_cidade = $id_cidade;
+		 }
+		 
 		public function getId(){
 			return $this->id;
 		}
-		
+
 		public function getNome(){
 			return $this->nome;
 		}
@@ -67,6 +68,6 @@
 		public function setIdCidade($id_cidade){
 			$this->id_cidade = $id_cidade;
 		}
-		//$id, $nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade	
+		//$id, $nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade
 	}
 ?>

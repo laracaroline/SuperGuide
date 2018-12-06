@@ -1,12 +1,13 @@
 <?php
     require_once "BaseCrudDao.php";
-    require_once "../conexao/Conexao.php";
+
 
     class SupermercadoDao implements BaseCrudDao {
         private $instanciaConexaoPdo;
         private $tabela;
 
         public function __construct() {
+            require_once "../conexao/Conexao.php";
             $this->instanciaConexaoPdo = Conexao::getInstancia();
             $this->tabela = "supermercados";
         }
