@@ -8,8 +8,15 @@
 
   //echo $cidade;
   $clienteDao = new ClienteDao();
-  $clienteObjeto = $clienteDao->read($cliente);
-  $cliente = new Cliente( $cpf, $senha);
+
+  //$cliente = new Cliente($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade);
+  $cliente = new Cliente();
+  
+  $cliente->setCpf($cpf);
+  $cliente->setSenha($senha);
+
+  
+  $clienteObjeto = $clienteDao->logar($_POST["cpf"], $_POST["senha"]);
 
   if($clienteDao->logar($cliente)){
     if(isset($_POST['cpf'])){

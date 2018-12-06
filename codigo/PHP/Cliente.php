@@ -9,15 +9,15 @@
 		private $data_nasc;
 		private $id_cidade;
 		
-		public function __construct($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade){
-			$this->nome = $nome;
-			$this->cpf = $cpf;
-			$this->telefone = $telefone;
-			$this->email = $email;
-			$this->senha = $senha;
-			$this->data_nasc = $data_nasc;
-			$this->id_cidade = $id_cidade;
-		}
+		// public function __construct($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade){
+		// 	$this->nome = $nome;
+		// 	$this->cpf = $cpf;
+		// 	$this->telefone = $telefone;
+		// 	$this->email = $email;
+		// 	$this->senha = $senha;
+		// 	$this->data_nasc = $data_nasc;
+		// 	$this->id_cidade = $id_cidade;
+		// }
 		public function getId(){
 			return $this->id;
 		}

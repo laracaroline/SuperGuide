@@ -1,12 +1,12 @@
 <?php
 	require_once "BaseCrudDao.php" ;
-	require_once 'conexao/Conexao.php';
 
 	class ClienteDao implements BaseCrudDao{
 		private $instanciaConexaoPdo;
 		private $tabela;
 
 		function __construct(){
+			require_once '../conexao/Conexao.php';
 			$this->instanciaConexaoPdo = Conexao::getInstancia();
 			$this->tabela = "clientes";
 		}
@@ -51,6 +51,8 @@
 		}
 
 		public function read($id){
+
+
 			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_cliente=:id";
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
@@ -149,10 +151,15 @@
 			}
 		}
 
-		public function logar($cpf, $senha){
-			$sql = $pdo->prepare("SELECT id_cliente FROM clientes WHERE cpf_cliente = :c AND senha_cliente = :s");
-			$sql->blindValue(":c", $cpf);
-			$sql->blindValue(":s", $senha);
+		public function logar($cpf, $senha = NULL){
+
+			$cpf->getCpf();
+
+			$sql = $this->instanciaConexaoPdo->prepare("SELECT * FROM clientes WHERE cpf_cliente = :cpf_cliente and senha_cliente = :senha_cliente");
+
+			$sql->bindValue(":cpf_cliente", $cpf);
+			$sql->bindValue(":senha_cliente", $senha);
+
 			$sql->execute();
 
 			if($sql->rowCount() > 0){
