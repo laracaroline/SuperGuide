@@ -108,7 +108,7 @@
               '</button>' . "</td>".
               "<td>" 	. '<button class="ui red button" id=',$alterar," onclick=", $produtoDao->delete($alterar)," a href='alterar_produtos.php'>X</button>" . "</td>";
 						}
-            */
+            
 
             //"<a href='editar_cliente.php?id= . $row_user['id'] . </a>"
 					?>
