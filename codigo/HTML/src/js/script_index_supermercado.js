@@ -7,7 +7,7 @@ $(function(){
 			url:"../PHP/cadastro/logar_supermercado.php",
 			data:$(this).serialize(),
 			success: function(response){
-				if (response == "Logando..."){
+				if (response == 1){
 					location.href = "home.php";
 				}
 				$(".form-message").html(response);

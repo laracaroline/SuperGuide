@@ -10,7 +10,7 @@
 
   if($supermercadoObjeto != NULL){
       if($supermercadoDao->ObjetoLogar($supermercadoObjeto->getCnpj(), $supermercadoObjeto->getSenha())){
-        echo "Logando...";
+        return 1;
         //header("Location: alterar_produtos.php");
       } else{
         echo "Falha!";
