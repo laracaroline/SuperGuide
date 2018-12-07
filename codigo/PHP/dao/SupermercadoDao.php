@@ -1,5 +1,7 @@
 <?php
     require_once "BaseCrudDao.php";
+    require_once "ProdutoDao.php";
+    require_once "preco_produto.php";
 
 
     class SupermercadoDao implements BaseCrudDao {
@@ -248,5 +250,34 @@
         }
     }
 
+    public function listarPrecoProduto(){
+			try{
+			$sqlStmt = "SELECT * FROM preco_produtos";
+			$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+			$operacao->execute();
+
+			$precos = new ArrayObject();
+
+			while($getRow = $operacao->fetch(PDO::FETCH_OBJ)){
+				$id_supermercado = $getRow->id_supermercado;
+				$preco = $getRow->preco_produto;
+        $id_produto = $getRow->id_produto;
+
+        $supermercadoDao = new SupermercadoDao();
+        $objSupermercado = $supermercadoDao->read($id_supermercado);
+
+        $produtoDao = new ProdutoDao();
+        $objProduto = $produtoDao->read($id_produto);
+
+				$objeto = new preco_produto($objProduto, $preco_produto, $objSupermercado);
+				$precos->append($objeto);
+			}
+			return $precos;
+
+			}catch(PDOException $excecao){
+				echo $excecao->getMessage();
+			}
+
     }
+  }
 ?>
