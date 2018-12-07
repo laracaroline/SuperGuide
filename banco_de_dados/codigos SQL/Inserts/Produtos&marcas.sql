@@ -1,3 +1,5 @@
+INSERT INTO categorias (NOME_CATEGORIA, DESCRICAO_CATEGORIA) VALUES ('Limpeza', 'Produtos destinados a limpeza'), ('Bebidas', 'As birita'), ('Hortaliças', 'Vegano pira'), ('Grãos', ''), ('Hortifruti', ''), ('Industrializados', ''), ('Guloseimas', ''), ('Carnes', ''), ('Cereais', ''), ('Frios', ''), ('Congelados', ''), ('Higiene Pessoal', ''), ('Temperos', ''),('Massas', '');
+
 INSERT INTO `mydb`.`marcas` (`nome_marca`) VALUES ('Cristal');
 INSERT INTO `mydb`.`marcas` (`nome_marca`) VALUES ('Tio Jorge');
 INSERT INTO `mydb`.`marcas` (`nome_marca`) VALUES ('Cisne');

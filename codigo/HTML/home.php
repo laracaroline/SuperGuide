@@ -34,7 +34,7 @@
 		<header>
 			<nav class="cabecalho">
 				<div class="logo">
-					<img src="src/img/logo.png" id="tamlogo">
+					<a href="home.php"><img src="src/img/logo.png" id="tamlogo"></a>
 				</div>
 
 				<form method="POST" action="pesquisa.php">
