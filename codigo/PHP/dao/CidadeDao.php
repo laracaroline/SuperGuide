@@ -147,5 +147,35 @@
 			}
 		}
 
+		public function listarCidadeId($id){
+
+			try{
+				$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_estado = :id  ORDER BY nome_cidade";
+
+
+				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+				$operacao->bindValue(":id", $id, PDO::PARAM_INT);
+				$operacao->execute();
+
+
+				$cidades = new ArrayObject();
+
+				while($getRow = $operacao->fetch(PDO::FETCH_OBJ)){
+					$id_cidade = $getRow->id_cidade;
+					$nome = $getRow->nome_cidade;
+					$id_estado = $getRow->id_estado;
+					$objeto = new Cidade($nome, $id_estado);
+					$objeto->setId($id_cidade);
+					$cidades->append($objeto);
+				}
+				
+				return $cidades;
+
+
+			}catch(PDOException $excecao){
+				echo $excecao->getMessage();
+			}
+		}
+
 	}
 ?>
