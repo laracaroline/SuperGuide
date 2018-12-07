@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'C:\xampp\htdocs\PHP\Supermercado.php';
+    require_once '..\PHP\Supermercado.php';
     require_once "BaseCrudDao.php";
     require_once "ProdutoDao.php";
     require_once 'conexao\Conexao.php';

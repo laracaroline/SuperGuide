@@ -1,6 +1,6 @@
 <?php
     require_once "BaseCrudDao.php";
-    require_once 'C:\xampp\htdocs\PHP\Produto.php';
+    require_once '..\PHP\Produto.php';
     require_once "conexao/Conexao.php";//teste blin
 
     class ProdutoDao implements BaseCrudDao {
