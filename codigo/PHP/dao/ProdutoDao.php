@@ -50,7 +50,7 @@
             }
         }
 
-        public function read($id) {
+      public function read($id) {
 			$sqlStmt = "SELECT * FROM {$this->tabela} WHERE id_produto=:id";
 			try{
 				$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
