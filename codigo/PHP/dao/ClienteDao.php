@@ -178,5 +178,18 @@
 	    echo $excecao->getMessage();
 	  }
 	}
+
+		public function PesquisarProduto(){
+			$SendPesq = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+			if($SendPesq){
+				$pesquisa = filter_input(INPUT_POST, 'SendPesq', FILTER_SANITIZE_STRING);
+				$result_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
+				$resultado = $this->instanciaConexaoPdo->prepare($result_pesquisa);
+				while ($row_pesquisa = $resultado->fetch(PDO::FETCH_OBJ)){
+					echo "ID: " . $row_pesquisa['id_produto'] . "<br>";
+				}
+			}
+		}
+
 }
 ?>

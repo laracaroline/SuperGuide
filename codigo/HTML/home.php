@@ -24,6 +24,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="src/js/script_pesquisa.js"></script>
+
   </head>
   <body>
 		<header>
@@ -32,13 +34,15 @@
 					<img src="src/img/logo.png" id="tamlogo">
 				</div>
 
-				<div class="ui category search">
-					<div class="ui icon input">
-						<input class="prompt" type="text" placeholder="Buscar Produtos">
-						<i class="search icon"></i>
+				<form method="POST" action="pesquisa.phhp">
+					<div class="ui category search">
+						<div class="ui icon input">
+							<input name="palavra" class="prompt" type="text" placeholder="Buscar Produtos">
+							<input name="pesquisa" class="ui button" type="submit" placeholder="Pesquisar">
+							<i class="search icon"></i>
+						</div>
 					</div>
-					<div class="results"></div>
-				</div>
+				</form>
 
 					<div class="ui compact menu" id="menu">
 					  <div class="ui simple dropdown item">
