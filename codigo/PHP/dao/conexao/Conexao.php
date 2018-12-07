@@ -1,5 +1,5 @@
 <?php
-class Conexao{
+class Conexao1{
     private static $instancia;
 
     private function __construct() {}

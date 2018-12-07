@@ -8,7 +8,7 @@
         private $tabela;
 
         public function __construct() {
-            $this->instanciaConexaoPdo = Conexao::getInstancia();
+            $this->instanciaConexaoPdo = Conexao1::getInstancia();
             $this->tabela = "produtos";
         }
 

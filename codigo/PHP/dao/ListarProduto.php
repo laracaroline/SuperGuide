@@ -11,7 +11,7 @@ class ListarProduto{
   private $instanciaConexaoPdo;
 
   function __construct(){
-    $this->instanciaConexaoPdo = Conexao::getInstancia();
+    $this->instanciaConexaoPdo = Conexao1::getInstancia();
   }
 
   public function listarPrecoProduto(){

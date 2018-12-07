@@ -68,8 +68,8 @@
 				<thead>
 
 					<tr>
-						<th>Nome do Supermercado</th>
-						<th>Nome do Produto</th>
+						<th>Supermercado</th>
+						<th>Produto</th>
 						<th>Preço</th>
 					</tr>
 

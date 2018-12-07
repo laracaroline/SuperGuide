@@ -8,7 +8,7 @@
 		private $tabela;
 
 		function __construct(){
-			$this->instanciaConexaoPdo = Conexao::getInstancia();
+			$this->instanciaConexaoPdo = Conexao1::getInstancia();
 			$this->tabela = "marcas"; //nome da tabela do banco de dados
 		}
 

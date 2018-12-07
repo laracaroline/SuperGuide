@@ -1,6 +1,6 @@
 <?php
   require_once "BaseCrudDao.php";
-  require_once "../conexao/Conexao.php";
+  require_once "conexao/Conexao.php";
 
   class PaisDao implements BaseCrudDao {
 
@@ -8,7 +8,7 @@
       private $tabela;
 
       function __construct(){
-        $this->instanciaConexaoPdo = Conexao::getInstancia();
+        $this->instanciaConexaoPdo = Conexao1::getInstancia();
         $this->tabela = "paises"; //nome da tabela do banco de dados
       }
 

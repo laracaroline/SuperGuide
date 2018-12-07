@@ -5,7 +5,7 @@
   include_once '../dao/CategoriaDao.php';
   include_once '../Marca.php';
   include_once '../Categoria.php';
-
+  
   $nome = $_POST["nome"];
   $descricao = $_POST["descricao"];
   $marca = $_POST["marca"];

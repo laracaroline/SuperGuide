@@ -10,7 +10,7 @@
 
   if($supermercadoObjeto != NULL){
       if($supermercadoDao->ObjetoLogar($supermercadoObjeto->getCnpj(), $supermercadoObjeto->getSenha())){
-        header("Location: ../../HTML/home.php");
+        header("Location: ../../HTML/home_supermercado.php");
       } else{
         echo "Falha!";
       }
