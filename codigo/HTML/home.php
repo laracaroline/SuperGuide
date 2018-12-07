@@ -3,7 +3,7 @@
 	require_once "../PHP/dao/SupermercadoDao.php";
 
 	$supermercadoDao = new SupermercadoDao();
-	$supermercados = $supermercadoDao->listarSupermercados();
+	$precos = $supermercadoDao->listarPrecoProduto();
 ?>
 
 <!DOCTYPE html>
@@ -72,10 +72,10 @@
 				<tbody>
 
 					<?php
-						foreach ( $supermercados as $k => $v ) {
+						foreach ( $precos as $k => $v ) {
 							echo "<tr> <td>" 	. utf8_encode($v->getNome()) . "</td>".
-							"<td>" 	. utf8_encode($v->getCnpj()) . "</td>".
-							"<td>" 	. utf8_encode($v->getSenha()) . "</td>";
+							"<td>" 	. utf8_encode($v->getPreco()) . "</td>".
+							"<td>" 	. utf8_encode($v->getNome()) . "</td>";
 						}
 					?>
 				</tbody>
