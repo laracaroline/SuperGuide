@@ -39,7 +39,7 @@
   </head>
   <body>
 		<header>
-			<nav class="cabecalho">>
+			<nav class="cabecalho">
 				<div>
 					<img src="src/img/logo.png" id="tamlogo">
 				</div>

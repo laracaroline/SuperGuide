@@ -27,8 +27,8 @@
   </head>
   <body>
 		<header>
-			<nav class="cabecalho">>
-				<div>
+			<nav class="cabecalho">
+				<div class="logo">
 					<img src="src/img/logo.png" id="tamlogo">
 				</div>
 

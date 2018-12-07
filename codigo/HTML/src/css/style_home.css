@@ -9,6 +9,7 @@ nav li{
   font-family: 'Montserrat';
 }
 
+
 .cabecalho{
 	padding: 15px;
 	display: flex;
@@ -17,7 +18,7 @@ nav li{
   width: auto;
   height: auto;
   background-color: #35373b;
-  justify-content: center;
+  justify-content: space-between;
 
 }
 
@@ -66,7 +67,9 @@ nav li{
   height: 25px;
 }
 
-
+#menu{
+	margin-right: 50px;
+}
 .cabecalho a{
 	text-decoration: none;
 	color: black;
