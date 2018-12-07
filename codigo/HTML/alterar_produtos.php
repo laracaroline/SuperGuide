@@ -104,10 +104,13 @@
               "<td>" 	. utf8_encode($categoriaDao->read($v->getCategoria())->getNome()) . "</td>".
               "<td>" 	. '<button class="ui animated fade button" id=',$alterar,' name=alterar tabindex="0" type="submit">
                 <div class="visible content"><i class="right arrow icon"></i></div>
-                <div class="hidden content">Alterar</div>
-              </button>' . "</td>".
-              "<td>" 	. '<button class="ui red button" id=',$alterar,'>X</button>' . "</td>";
+                <div class="hidden content">Alterar</div>',
+              '</button>' . "</td>".
+              "<td>" 	. '<button class="ui red button" id=',$alterar," onclick=", $produtoDao->delete($alterar)," a href='alterar_produtos.php'>X</button>" . "</td>";
 						}
+            */
+
+            //"<a href='editar_cliente.php?id= . $row_user['id'] . </a>"
 					?>
 				</tbody>
 			</table>
