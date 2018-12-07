@@ -1,4 +1,4 @@
-<?php
+ <?php
   require_once "../Cidade.php";
   require_once "../dao/CidadeDao.php";
   require_once "../Estado.php";
