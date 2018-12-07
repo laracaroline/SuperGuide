@@ -69,13 +69,13 @@ $cidades = $cidadeDao->listarCidade();
 					</select>
 					<br/> <br/>
 
-          Cidade:</br>
+					<span id="boxCidade">
+						
+          			Cidade:</br>
 					<select id="cidade" name="cidade" class="ui dropdown" required > <!-- style="display:none"-->
-						<?php
-						foreach ( $cidades as $k => $v ) {
-							echo "<option value=\"" . $v->getId() . "\">" . utf8_encode($v->getNome()) . "</option>";
-						}
-						?>
+						
+					</span>
+					
 					</select>
 					<br/> <br/>
 
@@ -91,17 +91,18 @@ $cidades = $cidadeDao->listarCidade();
 	</body>
 	<script>
 	$(document).ready(function(){
+		$("#boxCidade").css({"display":"none"});
 		$("#estado").on("change", function(){
 			var idEstado = $('#estado').val();
-			alert(idEstado);
+			//alert(idEstado);
 			$.ajax({
-							url: 'pega_cidades.php',
+				url: 'pega_cidades.php',
 	            type: 'POST',
-	            data: 'idEstado',
+	            data: {id: idEstado},
 	            success: function(data){
-								$("#cidade").css({'display':'block'});
-								$("#cidade").html(data);
-							}
+					$("#boxCidade").css({'display':'block'});
+					$("#cidade").html(data);
+				}
 			});
 		});
 	});
