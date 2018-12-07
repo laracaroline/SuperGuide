@@ -66,10 +66,9 @@
 			</nav>
 		</header>
 
-		<div class="conteiner">
+    <div class="conteiner">
 			<table class="ui grey table">
 				<thead>
-
 					<tr>
 						<th>Nome do Produto</th>
 						<th>Descri&ccedil;&atilde;o do Produto</th>
@@ -78,11 +77,9 @@
             <th>Alterar</th>
             <th>Excluir</th>
 					</tr>
-
 				</thead>
 				<tbody>
-          <!--apenas teste-->
-          <!--passar por GET-->
+          <!--apenas teste
           <tr>
 						<td>Nome do Produto</td>
 						<td>Descri&ccedil;&atilde;o do Produto</td>
@@ -95,28 +92,25 @@
               </button>
             </td>
             <td><button class="ui red button">X</button></td>
-
 					</tr>
+          -->
 
 					<?php
-          //Tem que resolver o problema de conexao pra arrumar/testar esse
-
 						foreach ( $produtos as $k => $v ) {
+              $alterar = $v->getId();//Variavel pra pegar o ID do produto a ser alterado ou deletado
 							echo "<tr> <td>" 	. utf8_encode($v->getNome()) . "</td>".
 							"<td>" 	. utf8_encode($v->getDescricao()) . "</td>".
-							//"<td>" 	. utf8_encode($v->getMarca()) . "</td>".//Assim funciona, mas so pega o id
-              //"<td>" 	. utf8_encode($v->getCategoria()) . "</td>".//Assim funciona, mas so pega o id
               "<td>" 	. utf8_encode($marcaDao->read($v->getMarca())->getNome()) . "</td>".
               "<td>" 	. utf8_encode($categoriaDao->read($v->getCategoria())->getNome()) . "</td>".
-              "<td>" . utf8_encode($v->getId()) . "</td>".
-              "<td>" 	. utf8_encode($v->getId()) . "</td>";
+              "<td>" 	. '<button class="ui animated fade button" id=',$alterar,' name=alterar tabindex="0" type="submit">
+                <div class="visible content"><i class="right arrow icon"></i></div>
+                <div class="hidden content">Alterar</div>
+              </button>' . "</td>".
+              "<td>" 	. '<button class="ui red button" id=',$alterar,'>X</button>' . "</td>";
 						}
-
 					?>
 				</tbody>
 			</table>
-
 		</div>
-
   </body>
 </html>
