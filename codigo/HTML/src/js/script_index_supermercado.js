@@ -6,8 +6,10 @@ $(function(){
 			type: "POST",
 			url:"../PHP/cadastro/logar_supermercado.php",
 			data:$(this).serialize(),
+			async: false,
 			success: function(response){
-				if (response == 1){
+				alert(response);
+				if (response == "logando"){
 					location.href = "home.php";
 				}
 				$(".form-message").html(response);
@@ -15,3 +17,4 @@ $(function(){
 		});
 	});
 });
+ //NAO SERVE PRA NADA
