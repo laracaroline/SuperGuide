@@ -151,9 +151,7 @@
 			}
 		}
 
-		public function logar($cpf, $senha = NULL){
-
-			$cpf->getCpf();
+		public function logar($cpf, $senha){
 
 			$sql = $this->instanciaConexaoPdo->prepare("SELECT * FROM clientes WHERE cpf_cliente = :cpf_cliente and senha_cliente = :senha_cliente");
 
@@ -171,6 +169,28 @@
 			}else{
 				return false; //nao foi possivel logar
 			}
+	}
+
+	public function ObjetoLogar($cpf, $senha){
+		$sqlStmt = "SELECT * FROM {$this->tabela} WHERE cpf_cliente = :cpf AND senha_cliente = :senha";
+	  try{
+	    $operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+	    $operacao->bindValue(":cpf", $cpf, PDO::PARAM_STR);
+	    $operacao->bindValue(":senha", $senha, PDO::PARAM_STR);
+	    $operacao->execute();
+	    $getRow = $operacao->fetch(PDO::FETCH_OBJ);
+			$id = $getRow->id_cliente;
+	    $nome = $getRow->nome_cliente;
+	    $telefone = $getRow->telefone_cliente;
+	    $email = $getRow->email_cliente;
+	    $data_nasc = $getRow->data_nasc_cliente;
+	    $id_cidade = $getRow->id_cidade;
+	    $objeto = new Cliente($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade);
+	    $objeto->setId($id);
+			return $objeto;
+	  }catch(PDOException $excecao){
+	    echo $excecao->getMessage();
+	  }
 	}
 }
 ?>
