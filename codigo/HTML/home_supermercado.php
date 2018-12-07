@@ -56,6 +56,8 @@
 								<div class="item"><a href="..\PHP\cadastro\cadastro_marca.php" id="sair">Cadastrar Marca</a></div>
 								<div class="item"><a href="..\PHP\cadastro\cadastro_categoria.php" id="sair">Cadastrar Categoria</a></div>
 								<div class="item"><a href="..\PHP\cadastro\cadastro_preco.php" id="sair">Cadastrar Preço</a></div>
+								<div class="item"><a href="alterar_produtos.php" id="sair">Alterar Produto</a></div>
+
 					    </div>
 					  </div>
 					</div>
