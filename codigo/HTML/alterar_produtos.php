@@ -44,11 +44,13 @@
 					<img src="src/img/logo.png" id="tamlogo">
 				</div>
 
-					<div id="divBusca">
-						<img src="src/img/buscar.png" alt="Buscar..."/>
-					  <input type="text" id="txtBusca" placeholder="Buscar..."/>
-					  <button id="btnBusca">Buscar</button>
-					</div>
+        <div class="ui category search">
+          <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Buscar Produtos">
+            <i class="search icon"></i>
+          </div>
+          <div class="results"></div>
+        </div>
 
 					<div class="ui compact menu" id="menu">
 					  <div class="ui simple dropdown item">
@@ -106,7 +108,7 @@
               //"<td>" 	. utf8_encode($v->getCategoria()) . "</td>".//Assim funciona, mas so pega o id
               "<td>" 	. utf8_encode($marcaDao->read($v->getMarca())->getNome()) . "</td>".
               "<td>" 	. utf8_encode($categoriaDao->read($v->getCategoria())->getNome()) . "</td>".
-              "<td>" 	. utf8_encode($v->getId()) . "</td>".
+              "<td>" . utf8_encode($v->getId()) . "</td>".
               "<td>" 	. utf8_encode($v->getId()) . "</td>";
 						}
 

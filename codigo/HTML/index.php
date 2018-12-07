@@ -56,6 +56,12 @@
 						<input class="campo" type="password" name="senha" id="senha_supermercado" placeholder="Informe a Senha"></br></br>
 						<center><input name="btnLogar" id="btnLogar" class="ui inverted primary button" type="submit" value="Fazer Login"></center>
 
+						<div class="ir_cadastro2">
+							<div class="ir_cadastro2">
+								<a href="../PHP/cadastro/cadastro_supermercado.php" class="ui inverted primary button" target="_blank">CADASTRE-SE AQUI</a>
+							</div>
+						</div>
+
 					</form>
 				</div>
 
@@ -70,14 +76,15 @@
 					Senha:</br>
 					<input class="campo" type="password" name="senha" id="senha_cliente" placeholder="Informe a Senha"></br></br>
 					<center><input name="btnLogar" id="btnLogar" class="ui inverted primary button" type="submit" value="Fazer Login"></center>
+					<div class="ir_cadastro">
+						<div class="ir_cadastro">
+							<a href="../PHP/cadastro/cadastro_cliente.php" class="ui inverted primary button" target="_blank">CADASTRE-SE AQUI</a>
+					</div>
 			</div>
 			</form>
 				</div>
 			</div>
-			<div class="ir_cadastro">
-				<div class="ir_cadastro">
-					<a href="identificar_cadastro.php" class="ui inverted primary button" target="_blank">CADASTRE-SE AQUI</a>
-				</div>
+
 			</div>
 		</div>
 

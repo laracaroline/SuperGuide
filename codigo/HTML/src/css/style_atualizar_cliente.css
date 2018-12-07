@@ -1,0 +1,160 @@
+body{
+	background-color: #e9eaed;
+	margin: 0px;
+
+}
+
+nav li{
+	list-style: none;
+  font-family: 'Montserrat';
+}
+
+.cabecalho{
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+
+  width: auto;
+  height: auto;
+  background-color: #35373b;
+  justify-content: center;
+
+}
+
+#tamlogo{
+  margin-left: 5%;
+  width: 80px;
+  height: 50px;
+}
+
+#divBusca{
+  background-color:#e9eaed;
+  border:solid 2px #5F9EA0;
+  border-radius:10px;
+  width:300px;
+  height:32px;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:191px;
+}
+
+#btnBusca{
+  border:none;
+  float:left;
+  height:30px;
+  border-radius:0 7px 7px 0;
+  width: 71px;
+  font-weight:bold;
+  background: #5F9EA0;
+}
+
+#btnBusca:hover{
+   background-color: yellow;
+}
+
+#divBusca img{
+  margin-left: 3%;
+  float:left;
+  width: 25px;
+  height: 25px;
+}
+
+
+.cabecalho a{
+	text-decoration: none;
+	color: black;
+}
+
+.conteiner{
+  height: 100%;
+
+	background-color: #c6c6c6;
+
+	display: flex;
+	justify-content: center;
+	padding: 10px 100px 0px 100px;
+  background-color: #e9eaed;
+}
+
+.form_atualizar{
+	height: auto;
+	width: 30vw;
+
+
+	box-shadow: 5px 2px 3px  #888888;
+
+	background-color: white;
+
+	flex-direction: collumn;
+	display: flex;
+
+	border-radius: 5px;
+
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat, Regular;
+
+}
+
+.form_atualizar input[type=submit]{
+	text-align: center;
+	font-family: Montserrat;
+	justify-content: center;
+	border-radius: 6px;
+}
+
+.form_atualizar h2{
+  margin-top: 25px;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 18px;
+}
+.cont1{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+}
+.cont2{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.campo{
+
+	border-radius: 8px;
+
+	height: 30px;
+
+	padding: 5px;
+
+	border:none;
+	background-color: #D3D3D3;
+}
+
+.ir_cadastro{
+	display: flex;
+	flex-direction: collumn;
+	width: 100%;
+	background-color: #E6E6E6;
+	justify-content: center;
+	padding: 15px;
+}
+
+.ir_cadastro a{
+	text-decoration: none;
+	color: #808080;
+	font-family: Montserrat;
+}
+
+.ir_cadastro a:hover{
+	color: orange;
+}

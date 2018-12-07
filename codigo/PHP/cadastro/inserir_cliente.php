@@ -18,7 +18,7 @@
   $clienteDao = new ClienteDao();
 
   if($clienteDao->create($cliente)){
-    echo "Cliente inserido com sucesso!";
+    echo "Cliente inserido com sucesso!  <a href='../../HTML/index.php'>Clique aqui</a> para fazer login";
   } else{
     echo "Falha!";
   }

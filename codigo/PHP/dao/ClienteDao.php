@@ -151,25 +151,6 @@
 			}
 		}
 
-		public function logar($cpf, $senha){
-
-			$sql = $this->instanciaConexaoPdo->prepare("SELECT * FROM clientes WHERE cpf_cliente = :cpf_cliente and senha_cliente = :senha_cliente");
-
-			$sql->bindValue(":cpf_cliente", $cpf);
-			$sql->bindValue(":senha_cliente", $senha);
-
-			$sql->execute();
-
-			if($sql->rowCount() > 0){
-				$dado = $sql->fetch();
-				session_start();
-				$_SESSION['logado'] = true;
-				$_SESSION['id_cliente'] = $dado['id_cliente'];
-				return true; //logado com sucesso
-			}else{
-				return false; //nao foi possivel logar
-			}
-	}
 
 	public function ObjetoLogar($cpf, $senha){
 		$sqlStmt = "SELECT * FROM {$this->tabela} WHERE cpf_cliente = :cpf AND senha_cliente = :senha";
@@ -187,6 +168,11 @@
 	    $id_cidade = $getRow->id_cidade;
 	    $objeto = new Cliente($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade);
 	    $objeto->setId($id);
+
+			//exemplo de criar sessão
+			//$_SESSION['logado'] = true;
+			//$_SESSION['id_cliente'] = $dados['id_cliente'];
+
 			return $objeto;
 	  }catch(PDOException $excecao){
 	    echo $excecao->getMessage();

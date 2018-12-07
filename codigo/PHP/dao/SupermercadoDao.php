@@ -7,7 +7,7 @@
         private $tabela;
 
         public function __construct() {
-            require_once "conexao/Conexao.php";
+            //require_once "conexao/Conexao.php";
             $this->instanciaConexaoPdo = Conexao::getInstancia();
             $this->tabela = "supermercados";
         }

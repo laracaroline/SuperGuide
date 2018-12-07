@@ -32,11 +32,13 @@
 					<img src="src/img/logo.png" id="tamlogo">
 				</div>
 
-					<div id="divBusca">
-						<img src="src/img/buscar.png" alt="Buscar..."/>
-					  <input type="text" id="txtBusca" placeholder="Buscar..."/>
-					  <button id="btnBusca">Buscar</button>
+				<div class="ui category search">
+					<div class="ui icon input">
+						<input class="prompt" type="text" placeholder="Buscar Produtos">
+						<i class="search icon"></i>
 					</div>
+					<div class="results"></div>
+				</div>
 
 					<div class="ui compact menu" id="menu">
 					  <div class="ui simple dropdown item">

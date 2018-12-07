@@ -10,9 +10,9 @@
   $clienteObjeto = $clienteDao->ObjetoLogar($cpf, $senha);
 
   if($clienteObjeto != NULL){
-      if($clienteDao->logar($clienteObjeto->getCpf(), $clienteObjeto->getSenha())){
-        echo "disgraça";
-          //header("Location: alterar_produtos.php");
+      if($clienteDao->ObjetoLogar($clienteObjeto->getCpf(), $clienteObjeto->getSenha())){
+        echo 1;
+        //header("Location: alterar_produtos.php");
       } else{
         echo "Falha!";
       }
