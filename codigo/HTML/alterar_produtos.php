@@ -2,11 +2,11 @@
   require_once "../PHP/Marca.php";
   require_once "../PHP/Categoria.php";
   require_once "../PHP/Produto.php";
-  require_once "../PHP/dao/ProdutoDao.php";  
-
   require_once "../PHP/dao/MarcaDao.php";
   require_once "../PHP/dao/CategoriaDao.php";
   require_once "../PHP/dao/ProdutoDao.php";
+
+  //require_once "../conexao/Conexao.php"
 
   /*
   require_once "../PHP/Supermercado.php";
@@ -14,8 +14,8 @@
   */
 
 
-	//$produtoDao = new ProdutoDao();
-	//$produtos = $produtoDao->listarProdutos();
+	$produtoDao = new ProdutoDao();
+	$produtos = $produtoDao->listarProdutos();
 ?>
 
 <!DOCTYPE html>
@@ -80,6 +80,7 @@
 				</thead>
 				<tbody>
           <!--apenas teste-->
+          <!--passar por GET-->
           <tr>
 						<td>Nome do Produto</td>
 						<td>Descri&ccedil;&atilde;o do Produto</td>
@@ -97,17 +98,18 @@
 
 					<?php
           //Tem que resolver o problema de conexao pra arrumar/testar esse
-          /*
+
 						foreach ( $produtos as $k => $v ) {
 							echo "<tr> <td>" 	. utf8_encode($v->getNome()) . "</td>".
 							"<td>" 	. utf8_encode($v->getDescricao()) . "</td>".
-							"<td>" 	. utf8_encode($v->getMarca()->getNome()) . "</td>".
-              "<td>" 	. utf8_encode($v->getCategoria()->getNome()) . "</td>".
-              "<td>" 	. utf8_encode($v->getCategoria()->getNome()) . "</td>".
+							//"<td>" 	. utf8_encode($v->getMarca()->getNome()) . "</td>".
+              //"<td>" 	. utf8_encode($v->getCategoria()->getNome()) . "</td>".
+              "<td>" 	. utf8_encode($v->getMarca()) . "</td>".
+              "<td>" 	. utf8_encode($v->getCategoria()) . "</td>".
               "<td>" 	. utf8_encode($v->getId()) . "</td>".
               "<td>" 	. utf8_encode($v->getId()) . "</td>";
 						}
-            */
+
 					?>
 				</tbody>
 			</table>
