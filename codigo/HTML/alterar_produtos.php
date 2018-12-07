@@ -8,14 +8,14 @@
 
   //require_once "../conexao/Conexao.php"
 
-  /*
-  require_once "../PHP/Supermercado.php";
-	require_once "../PHP/dao/SupermercadoDao.php";
-  */
-
-
 	$produtoDao = new ProdutoDao();
 	$produtos = $produtoDao->listarProdutos();
+
+  $categoriaDao = new CategoriaDao();
+	$categorias = $categoriaDao->listarCategoria();
+
+  $marcaDao = new MarcaDao();
+	$marcas = $marcaDao->listarMarca();
 ?>
 
 <!DOCTYPE html>
@@ -102,10 +102,10 @@
 						foreach ( $produtos as $k => $v ) {
 							echo "<tr> <td>" 	. utf8_encode($v->getNome()) . "</td>".
 							"<td>" 	. utf8_encode($v->getDescricao()) . "</td>".
-							//"<td>" 	. utf8_encode($v->getMarca()->getNome()) . "</td>".
-              //"<td>" 	. utf8_encode($v->getCategoria()->getNome()) . "</td>".
-              "<td>" 	. utf8_encode($v->getMarca()) . "</td>".
-              "<td>" 	. utf8_encode($v->getCategoria()) . "</td>".
+							//"<td>" 	. utf8_encode($v->getMarca()) . "</td>".//Assim funciona, mas so pega o id
+              //"<td>" 	. utf8_encode($v->getCategoria()) . "</td>".//Assim funciona, mas so pega o id
+              "<td>" 	. utf8_encode($marcaDao->read($v->getMarca())->getNome()) . "</td>".
+              "<td>" 	. utf8_encode($categoriaDao->read($v->getCategoria())->getNome()) . "</td>".
               "<td>" 	. utf8_encode($v->getId()) . "</td>".
               "<td>" 	. utf8_encode($v->getId()) . "</td>";
 						}
