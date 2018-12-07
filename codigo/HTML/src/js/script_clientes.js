@@ -43,7 +43,7 @@ $(function(){
 
 	$("#estado").on("change", function(){
 		var idEstado = $("#estado").val();
-
+		alert(idEstado);
 
 	$.ajax({
 			url: 'pega_cidades.php',

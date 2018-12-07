@@ -8,17 +8,7 @@ $estadoDao = new EstadoDao();
 $estados = $estadoDao->listarEstado();
 $cidadeDao = new CidadeDao();
 $cidades = $cidadeDao->listarCidade();
-	/**require_once "../PHP/dao/ClienteDao.php";
 
-	$objFn = new ClienteDao();
-
-	if(isset($_POST['btCadastrar'])){
-		if($objFn->create($_POST)){
-			header("location: /cadastro");
-		}else{
-			echo'<scrpit type="text/javascript">alert("Erro em cadastrar")</script>';
-		}
-	}**/
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +29,7 @@ $cidades = $cidadeDao->listarCidade();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../../HTML/src/js/jquery.mask.min.js"></script>
 	<script type="text/javascript" src="../../HTML/src/js/mascaras.js"></script>
-	<script type="text/javascript" src="../../HTML/src/js/script_clientes.js"></script>
+	<!-- <script type="text/javascript" src="../../HTML/src/js/script_clientes.js"></script> -->
 	<script type="text/javascript" src="../../HTML/src/js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="../../HTML/src/js/additional-methods.min.js"></script>
 	<script type="text/javascript" src="../../HTML/src/js/localization/messages_pt_BR.min.js"></script>
@@ -73,19 +63,19 @@ $cidades = $cidadeDao->listarCidade();
 					<select id="estado" name="estado" class="ui dropdown" required>
 				    <?php
 							foreach ( $estados as $k => $v ) {
-				        echo "<option value=\"" . $v->getId() . "\">" . utf8_encode($v->getNome()) . "</option>";
+				        echo "<option value=' " . $v->getId() . " '\>" . utf8_encode($v->getNome()) . "</option>";
 				    	}
 						?>
 					</select>
 					<br/> <br/>
 
-          Cidade:</br>
+					<span id="boxCidade">
+						
+          			Cidade:</br>
 					<select id="cidade" name="cidade" class="ui dropdown" required > <!-- style="display:none"-->
-						<?php
-						foreach ( $cidades as $k => $v ) {
-							echo "<option value=\"" . $v->getId() . "\">" . utf8_encode($v->getNome()) . "</option>";
-						}
-						?>
+						
+					</span>
+					
 					</select>
 					<br/> <br/>
 
@@ -99,6 +89,22 @@ $cidades = $cidadeDao->listarCidade();
 
 		</div>
 	</body>
-
-
+	<script>
+	$(document).ready(function(){
+		$("#boxCidade").css({"display":"none"});
+		$("#estado").on("change", function(){
+			var idEstado = $('#estado').val();
+			//alert(idEstado);
+			$.ajax({
+				url: 'pega_cidades.php',
+	            type: 'POST',
+	            data: {id: idEstado},
+	            success: function(data){
+					$("#boxCidade").css({'display':'block'});
+					$("#cidade").html(data);
+				}
+			});
+		});
+	});
+</script>
 </html>

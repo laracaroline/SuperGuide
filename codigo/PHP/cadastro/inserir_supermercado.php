@@ -18,7 +18,7 @@
   $supermercadoDao = new SupermercadoDao();
 
   if($supermercadoDao->create($supermercado)){
-    echo "Supermercado inserido com sucesso!";
+    echo "Supermercado inserido com sucesso! <a href='../../HTML/index.php'>Clique aqui</a> para fazer login";
   } else{
     echo "Falha!";
   }

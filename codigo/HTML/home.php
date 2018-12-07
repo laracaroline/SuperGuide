@@ -24,19 +24,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="src/js/script_pesquisa.js"></script>
+
   </head>
   <body>
 		<header>
-			<nav class="cabecalho">>
-				<div>
+			<nav class="cabecalho">
+				<div class="logo">
 					<img src="src/img/logo.png" id="tamlogo">
 				</div>
 
-					<div id="divBusca">
-						<img src="src/img/buscar.png" alt="Buscar..."/>
-					  <input type="text" id="txtBusca" placeholder="Buscar..."/>
-					  <button id="btnBusca">Buscar</button>
+				<form method="POST" action="pesquisa.phhp">
+					<div class="ui category search">
+						<div class="ui icon input">
+							<input name="palavra" class="prompt" type="text" placeholder="Buscar Produtos">
+							<input name="pesquisa" class="ui button" type="submit" placeholder="Pesquisar">
+							<i class="search icon"></i>
+						</div>
 					</div>
+				</form>
 
 					<div class="ui compact menu" id="menu">
 					  <div class="ui simple dropdown item">
