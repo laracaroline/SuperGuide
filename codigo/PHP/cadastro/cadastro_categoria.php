@@ -38,6 +38,7 @@
           <input class="campo" type="text" name="descricao" id="descricao" placeholder="Informe a descri&ccedil;&atilde;o"></br></br>
 
           <center><input class="ui inverted primary button" type="submit" name="btCadastrar" value="Cadastrar"></center>
+          <a href="..\..\HTML\home_supermercado.php" id="sair">Voltar</a>
         </div>
       </form>
       </div>

@@ -14,6 +14,7 @@
   $prodObjeto = $produtoDao->read($produto);
   try {
     $supermercadoDao->inserirPreco($prodObjeto, $supObjeto, $preco);
+    header('Location: ..\..\HTML\home_supermercado.php');
   } catch (Exception $e) {
     echo $e->getMessage();
     echo "Erro";
