@@ -6,41 +6,54 @@
   $cpf = $_POST["cpf"];
   $senha = $_POST["senha"];
 
-  //echo $cidade;
   $clienteDao = new ClienteDao();
+  $clienteObjeto = $clienteDao->ObjetoLogar($cpf, $senha);
 
-  //$cliente = new Cliente($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade);
-  $cliente = new Cliente();
-  
-  $cliente->setCpf($cpf);
-  $cliente->setSenha($senha);
-
-  
-  $clienteObjeto = $clienteDao->logar($_POST["cpf"], $_POST["senha"]);
-
-  if($clienteDao->logar($cliente)){
-    if(isset($_POST['cpf'])){
-      $cpf = addslashes($_POST['$cpf']);
-      $senha = addslashes($_POST['$senha']);
-
-      if($clienteDao->msgErro == ""){
-
-        if(!empty($cpf) && !empty($senha)){
-          if ($clienteDao->logar($cpf, $senha)){
-            header("location: home.php");
-          }else{
-            echo "Email e/ou senha invalidos";
-          }
-        }else{
-          echo "Erro: ".$$clienteDao->msgErro;
-        }
-      }else{
-        echo "preencha os campos";
+  if($clienteObjeto != NULL){
+      if($clienteDao->logar($clienteObjeto->getCpf(), $clienteObjeto->getSenha())){
+        echo "disgraça";
+          //header("Location: alterar_produtos.php");
+      } else{
+        echo "Falha!";
       }
-    }
-
-  } else{
-    echo "Falha!";
+  } else {
+    echo "Usuário não existe!";
   }
+
+  // $clienteDao = new ClienteDao();
+  //
+  // $cliente = new Cliente($nome, $cpf, $telefone, $email, $senha, $data_nasc, $id_cidade);
+  // $cliente = new Cliente();
+  //
+  // $cliente->setCpf($cpf);
+  // $cliente->setSenha($senha);
+
+
+  // $clienteObjeto = $clienteDao->logar($_POST["cpf"], $_POST["senha"]);
+  //
+  // if($clienteDao->logar($cliente)){
+  //   if(isset($_POST['cpf'])){
+  //     $cpf = addslashes($_POST['$cpf']);
+  //     $senha = addslashes($_POST['$senha']);
+  //
+  //     if($clienteDao->msgErro == ""){
+  //
+  //       if(!empty($cpf) && !empty($senha)){
+  //         if ($clienteDao->logar($cpf, $senha)){
+  //           header("location: home.php");
+  //         }else{
+  //           echo "Email e/ou senha invalidos";
+  //         }
+  //       }else{
+  //         echo "Erro: ".$$clienteDao->msgErro;
+  //       }
+  //     }else{
+  //       echo "preencha os campos";
+  //     }
+  //   }
+  //
+  // } else{
+  //   echo "Falha!";
+  // }
 
  ?>
