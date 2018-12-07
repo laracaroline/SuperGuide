@@ -1,15 +1,15 @@
 <?php
+
+    require_once 'C:\xampp\htdocs\PHP\Supermercado.php';
     require_once "BaseCrudDao.php";
     require_once "ProdutoDao.php";
-    require_once "preco_produto.php";
-
+    require_once 'conexao\Conexao.php';
 
     class SupermercadoDao implements BaseCrudDao {
         private $instanciaConexaoPdo;
         private $tabela;
 
         public function __construct() {
-            require_once "conexao/Conexao.php";
             $this->instanciaConexaoPdo = Conexao::getInstancia();
             $this->tabela = "supermercados";
         }
@@ -250,34 +250,34 @@
         }
     }
 
-    public function listarPrecoProduto(){
-			try{
-			$sqlStmt = "SELECT * FROM preco_produtos";
-			$operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
-			$operacao->execute();
+    public function ObjetoLogar($cnpj, $senha){
+  		$sqlStmt = "SELECT * FROM {$this->tabela} WHERE cnpj_supermercado = :cnpj AND senha_supermercado = :senha";
+  	  try{
+  	    $operacao = $this->instanciaConexaoPdo->prepare($sqlStmt);
+  	    $operacao->bindValue(":cnpj", $cnpj, PDO::PARAM_STR);
+  	    $operacao->bindValue(":senha", $senha, PDO::PARAM_STR);
+  	    $operacao->execute();
+  	    $getRow = $operacao->fetch(PDO::FETCH_OBJ);
+        $id = $getRow->id_supermercado;
+				$nome = $getRow->nome_supermercado;
+        $cnpj = $getRow->cnpj_supermercado;
+        $endereco = $getRow->endereco_supermercado;
+        $telefone = $getRow->telefone_supermercado;
+        $email = $getRow->email_supermercado;
+        $senha = $getRow->senha_supermercado;
+				$id_cidade = $getRow->id_cidade;
+				$objeto = new Supermercado($nome, $cnpj, $endereco, $telefone, $email, $senha, $id_cidade);
+				$objeto->setId($id);
 
-			$precos = new ArrayObject();
+  			//exemplo de criar sessão
+  			//$_SESSION['logado'] = true;
+  			//$_SESSION['id_cliente'] = $dados['id_cliente'];
 
-			while($getRow = $operacao->fetch(PDO::FETCH_OBJ)){
-				$id_supermercado = $getRow->id_supermercado;
-				$preco = $getRow->preco_produto;
-        $id_produto = $getRow->id_produto;
+  			return $objeto;
+  	  }catch(PDOException $excecao){
+  	    echo $excecao->getMessage();
+  	  }
+  	}
 
-        $supermercadoDao = new SupermercadoDao();
-        $objSupermercado = $supermercadoDao->read($id_supermercado);
-
-        $produtoDao = new ProdutoDao();
-        $objProduto = $produtoDao->read($id_produto);
-
-				$objeto = new preco_produto($objProduto, $preco_produto, $objSupermercado);
-				$precos->append($objeto);
-			}
-			return $precos;
-
-			}catch(PDOException $excecao){
-				echo $excecao->getMessage();
-			}
-
-    }
   }
 ?>

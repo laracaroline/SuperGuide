@@ -35,6 +35,7 @@
 	<script type="text/javascript" src="src/js/jquery.mask.min.js"></script>
 	<script type="text/javascript" src="src/js/mascaras.js"></script>
 	<script type="text/javascript" src="src/js/script_index.js"></script>
+	<script type="text/javascript" src="src/js/script_index_supermercado.js"></script>
 	<script type="text/javascript" src="src/js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="src/js/additional-methods.min.js"></script>
 	<script type="text/javascript" src="src/js/localization/messages_pt_BR.min.js"></script>
@@ -45,7 +46,7 @@
 			<div class="container">
 				<div class="menu1">
 
-					<form id="login_form2" method="POST" action="logar_supermercado.php">
+					<form id="login_form2" method="POST" action="../PHP/cadastro/logar_supermercado.php">
 						<h2>Login</br>
 						Supermercado</h2></br></br>
 						<center><div class="form-message"></div></center>

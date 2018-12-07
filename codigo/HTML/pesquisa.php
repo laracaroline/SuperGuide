@@ -1,7 +1,10 @@
 <?php
-  include_once '../dao/ClienteDao.php';
-  include_once '../Cliente.php';
-  include_once '../dao/CidadeDao.php';
+  require_once 'C:\xampp\htdocs\PHP\dao\ListarProduto.php';
 
+  $pesquisa = $_POST['palavra'];
+
+  $lista = new ListarProduto();
+  $pesquisa = $lista->pesquisarProduto($pesquisa);
   
+
 ?>

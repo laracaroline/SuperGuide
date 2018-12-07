@@ -168,7 +168,7 @@
 					$objeto->setId($id_cidade);
 					$cidades->append($objeto);
 				}
-				
+
 				return $cidades;
 
 

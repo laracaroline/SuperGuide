@@ -1,9 +1,12 @@
 <?php
-	require_once "../PHP/Supermercado.php";
+	require_once "../PHP/dao/ListarProduto.php";
 	require_once "../PHP/dao/SupermercadoDao.php";
+	require_once "../PHP/dao/ProdutoDao.php";
 
-	$supermercadoDao = new SupermercadoDao();
-	$precos = $supermercadoDao->listarPrecoProduto();
+	$listarProduto = new ListarProduto();
+	$precos = $listarProduto->listarPrecoProduto();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +37,7 @@
 					<img src="src/img/logo.png" id="tamlogo">
 				</div>
 
-				<form method="POST" action="pesquisa.phhp">
+				<form method="POST" action="pesquisa.php">
 					<div class="ui category search">
 						<div class="ui icon input">
 							<input name="palavra" class="prompt" type="text" placeholder="Buscar Produtos">
@@ -72,10 +75,17 @@
 				<tbody>
 
 					<?php
+					$supDao = new SupermercadoDao();
+					$prodDao = new ProdutoDao();
 						foreach ( $precos as $k => $v ) {
-							echo "<tr> <td>" 	. utf8_encode($v->getNome()) . "</td>".
-							"<td>" 	. utf8_encode($v->getPreco()) . "</td>".
-							"<td>" 	. utf8_encode($v->getNome()) . "</td>";
+							$idp = $v->getProduto();
+							$ids = $v->getSupermercado();
+							$objS = $supDao->read($ids);
+							$objP = $prodDao->read($idp);
+
+							echo "<tr> <td>" 	. utf8_encode($objS->getNome()) . "</td>".
+							"<td>" 	. utf8_encode($objP->getNome())  . "</td>".
+							"<td>" 	.  utf8_encode($v->getPreco_Produto()) . "</td>";
 						}
 					?>
 				</tbody>
